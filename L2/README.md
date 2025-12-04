@@ -1,9 +1,9 @@
 # Airbnb NYC 2019 Price Prediction
 
-Dự án phân tích và dự đoán giá thuê phòng Airbnb tại New York City năm 2019. Điểm đặc biệt của dự án là việc **tự xây dựng (implement from scratch)** các thuật toán Machine Learning cốt lõi (Linear Regression, Lasso Regression) sử dụng thư viện **NumPy**, thay vì phụ thuộc vào các thư viện cấp cao như Scikit-learn.
+This project analyzes and predicts Airbnb rental prices in New York City in 2019. A key feature of this project is the **implementation from scratch** of core Machine Learning algorithms (Linear Regression, Lasso Regression) using the **NumPy** library, instead of relying on high-level libraries like Scikit-learn.
 
-## 📋 Mục lục
-1. [Giới thiệu](#giới-thiệu)
+## 📋 Table of Contents
+1. [Introduction](#introduction)
 2. [Dataset](#dataset)
 3. [Method](#method)
 4. [Installation & Setup](#installation--setup)
@@ -17,153 +17,189 @@ Dự án phân tích và dự đoán giá thuê phòng Airbnb tại New York Cit
 
 ---
 
-## 🌟 Giới thiệu
+## 🌟 Introduction
 
-### 1. Mô tả bài toán
-Dự án tập trung vào việc xây dựng mô hình Machine Learning để dự đoán giá niêm yết (**listing price**) của các căn hộ/phòng Airbnb tại New York City năm 2019.
-- **Input:** Các đặc điểm của căn hộ như vị trí (quận, khu vực), loại phòng (nguyên căn, phòng riêng), số đêm tối thiểu, số lượng đánh giá, v.v.
-- **Output:** Giá thuê phòng (biến liên tục).
-- **Loại bài toán:** Supervised Learning - Regression (Hồi quy tuyến tính).
+### 1. Problem Description
+The project focuses on building a Machine Learning model to predict the **listing price** of Airbnb apartments/rooms in New York City in 2019.
+- **Input:** Apartment features such as location (borough, neighborhood), room type (entire home, private room), minimum nights, number of reviews, etc.
+- **Output:** Rental price (continuous variable).
+- **Problem Type:** Supervised Learning - Regression (Linear Regression).
 
-### 2. Động lực & Ứng dụng thực tế
-Việc định giá phòng (Dynamic Pricing) là một thách thức lớn trong nền kinh tế chia sẻ:
-- **Đối với Chủ nhà (Hosts):** Giúp họ đưa ra mức giá cạnh tranh để tối đa hóa lợi nhuận và tỷ lệ lấp đầy (occupancy rate), tránh việc định giá quá cao (không ai thuê) hoặc quá thấp (mất doanh thu).
-- **Đối với Khách thuê (Guests):** Cung cấp tham chiếu để đánh giá xem một mức giá có hợp lý hay không, giúp họ tìm được các "deal" tốt hoặc tránh bị "hớ".
-- **Đối với Nền tảng:** Gợi ý giá tự động giúp cải thiện trải nghiệm người dùng và cân bằng cung cầu thị trường.
+### 2. Motivation & Practical Application
+Dynamic Pricing is a major challenge in the sharing economy:
+- **For Hosts:** Helps them set competitive prices to maximize profit and occupancy rates, avoiding pricing too high (no bookings) or too low (lost revenue).
+- **For Guests:** Provides a reference to evaluate if a price is reasonable, helping them find good deals or avoid being overcharged.
+- **For the Platform:** Automated price suggestions help improve user experience and balance market supply and demand.
 
-### 3. Mục tiêu cụ thể
-Dự án không chỉ dừng lại ở việc gọi thư viện có sẵn, mà hướng tới các mục tiêu chuyên sâu:
-- **Về Kỹ thuật:** Tự cài đặt (implement from scratch) các thuật toán **Linear Regression** và **Lasso Regression** chỉ sử dụng **NumPy**. Điều này giúp nắm vững bản chất toán học (Matrix Calculus, Gradient Descent, Coordinate Descent).
-- **Về Dữ liệu:** Xây dựng quy trình xử lý dữ liệu (Data Pipeline) hoàn chỉnh từ làm sạch, xử lý nhiễu, đến trích xuất đặc trưng (Feature Engineering) nâng cao như Target Encoding.
-- **Về Kết quả:** Xây dựng mô hình có độ chính xác chấp nhận được (R² > 0.5) và quan trọng hơn là khả năng **giải thích (interpretability)** - chỉ ra được yếu tố nào tác động mạnh nhất đến giá phòng tại NYC.
+### 3. Specific Goals
+The project goes beyond just calling available libraries, aiming for in-depth objectives:
+- **Technical:** Implement **Linear Regression** and **Lasso Regression** algorithms from scratch using only **NumPy**. This helps in mastering the mathematical nature (Matrix Calculus, Gradient Descent, Coordinate Descent).
+- **Data:** Build a complete Data Pipeline from cleaning, noise handling, to advanced Feature Engineering like Target Encoding.
+- **Results:** Build a model with acceptable accuracy (R² > 0.5) and more importantly, **interpretability** - identifying which factors most strongly affect room prices in NYC.
 
 ---
 
 ## 📊 Dataset
 
-### 1. Nguồn dữ liệu
-- **Nguồn:** [New York City Airbnb Open Data (Kaggle)](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)
-- **Kích thước:** ~49,000 dòng dữ liệu.
+### 1. Data Source
+- **Source:** [New York City Airbnb Open Data (Kaggle)](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)
+- **Size:** ~49,000 data rows.
 
-### 2. Mô tả các features
-- **Categorical:** `neighbourhood_group` (5 quận), `neighbourhood` (200+ khu vực), `room_type` (3 loại).
+### 2. Feature Description
+- **Categorical:** `neighbourhood_group` (5 boroughs), `neighbourhood` (200+ areas), `room_type` (3 types).
 - **Numerical:** `latitude`, `longitude`, `minimum_nights`, `number_of_reviews`, `reviews_per_month`, `calculated_host_listings_count`, `availability_365`.
 - **Target:** `price` (USD).
 
-### 3. Đặc điểm dữ liệu & EDA
-Dưới đây là một số biểu đồ quan trọng từ quá trình khám phá dữ liệu:
+### 3. Data Characteristics & EDA
+Below are some important charts from the data exploration process:
 
-#### a. Phân phối giá (Price Distribution)
-Phần lớn các listing có giá dưới $200/đêm. Biểu đồ bên dưới hiển thị phân phối giá cho các căn hộ <= $500.
-![Price Distribution](images/4.png)
+#### a. Price Distribution
+Most listings are priced under $200/night. The chart below shows the price distribution for apartments <= $500.
+![Price Distribution](https://github.com/user-attachments/assets/4f8b7910-e4ca-497e-8e84-5582e8443ca9)
 
-#### b. Phân bố địa lý (Geographic Distribution)
-Các listing tập trung dày đặc tại Manhattan và Brooklyn. Màu sắc thể hiện mức giá (đỏ/vàng là giá cao).
-![Geographic Map](images/12.png)
+#### b. Geographic Distribution
+Listings are densely concentrated in Manhattan and Brooklyn. Colors indicate price levels (red/yellow are high prices).
+![Geographic Map](https://github.com/user-attachments/assets/8c8a41a7-56cf-4c81-9d52-50d040a6874b)
 
-#### c. Giá theo loại phòng (Price by Room Type)
-"Entire home/apt" có mức giá cao nhất và biến động lớn nhất, trong khi "Shared room" có giá thấp nhất.
-![Room Type Price](images/11.png)
+#### c. Price by Room Type
+"Entire home/apt" has the highest price and largest variance, while "Shared room" has the lowest price.
+![Room Type Price](https://github.com/user-attachments/assets/42bbe49a-5a73-4f8c-a59b-2f38d1a5b526)
 
-#### d. Sự thống trị thị trường (Market Domination)
-Một số khu vực tại Manhattan bị chi phối mạnh mẽ bởi các "Top Hosts" (những người quản lý nhiều listing), cho thấy tính chất thương mại hóa cao.
-![Market Domination](images/18.png)
+#### d. Market Domination
+Some areas in Manhattan are strongly dominated by "Top Hosts" (those managing multiple listings), indicating high commercialization.
+![Market Domination](https://github.com/user-attachments/assets/e13c2e0e-0661-4e6e-bb5e-9fb1a4ca396a)
 
-#### e. Tương quan biến số (Correlation Matrix)
-Biểu đồ nhiệt thể hiện mối tương quan giữa các biến số. Các biến số ít có sự tương quan tuyến tính mạnh với nhau, ngoại trừ `number_of_reviews` và `reviews_per_month`.
-![Correlation Matrix](images/13.png)
+#### e. Correlation Matrix
+The heatmap shows the correlation between variables. Variables have little strong linear correlation with each other, except for `number_of_reviews` and `reviews_per_month`.
+![Correlation Matrix](https://github.com/user-attachments/assets/4ee7229f-84cb-40af-9e73-83ded285fcad)
 
-#### f. Phân bố mật độ giá theo khu vực (Price Density by Neighbourhood)
-Biểu đồ Violin cho thấy mật độ phân phối giá tại Manhattan rộng hơn và có đuôi dài hơn (nhiều listing giá cao) so với các quận khác như Queens hay Bronx.
-![Price Density](images/8.png)
+#### f. Price Density by Neighbourhood
+The Violin plot shows that the price distribution density in Manhattan is wider and has a longer tail (many high-priced listings) compared to other boroughs like Queens or Bronx.
+![Price Density](https://github.com/user-attachments/assets/ec487221-866c-4d91-ab99-91ed04eb5626)
 
-#### g. Từ khóa phổ biến trong tên listing (Top Words)
-Các từ khóa xuất hiện nhiều nhất trong tên phòng thường liên quan đến vị trí ("Manhattan", "Brooklyn", "Williamsburg") và đặc điểm phòng ("Private", "Room", "Cozy", "Spacious").
-![Top Words](images/23.png)
+#### g. Top Words in Listing Names
+The most frequent keywords in room names are often related to location ("Manhattan", "Brooklyn", "Williamsburg") and room characteristics ("Private", "Room", "Cozy", "Spacious").
+![Top Words](https://github.com/user-attachments/assets/253666d1-f7df-4336-99bf-0f9564857e9a)
 
 ---
 
 ## 🛠 Method
 
-### 1. Quy trình xử lý dữ liệu (Data Preprocessing Pipeline)
-Quy trình được thực hiện tuần tự để đảm bảo dữ liệu sạch và giàu thông tin cho mô hình:
+### 1. Data Preprocessing Pipeline
+The process is performed sequentially to ensure clean and informative data for the model:
 
-#### a. Data Cleaning (Làm sạch)
+#### a. Data Cleaning
 - **Missing Values:**
-  - `reviews_per_month`: NaN được điền bằng 0 (giả định không có review nghĩa là 0 review/tháng).
-  - `name`, `host_name`: Các trường văn bản thiếu được điền placeholder hoặc bỏ qua vì không dùng trực tiếp.
+  - `reviews_per_month`: NaN is filled with 0 (assuming no reviews means 0 reviews/month).
+  - `name`, `host_name`: Missing text fields are filled with placeholders or ignored as they are not used directly.
 - **Outlier Removal:**
-  - Loại bỏ các listing có `price = 0` (lỗi dữ liệu).
-  - Loại bỏ các listing có giá quá cao (ví dụ > $10,000) để tránh làm lệch mô hình Linear.
+  - Remove listings with `price = 0` (data error).
+  - Remove listings with extremely high prices (e.g., > $10,000) to avoid skewing the Linear model.
 
-#### b. Feature Engineering (Tạo đặc trưng)
+#### b. Feature Engineering
 - **Log Transformation:**
-  - Biến mục tiêu `price` có phân phối lệch phải (right-skewed). Áp dụng `log(1 + price)` để đưa về dạng gần phân phối chuẩn, giúp mô hình hồi quy tuyến tính hoạt động tốt hơn.
+  - The target variable `price` is right-skewed. Apply `log(1 + price)` to bring it closer to a normal distribution, helping the linear regression model perform better.
 - **Geospatial Features:**
-  - Tính khoảng cách từ căn hộ đến trung tâm NYC (Times Square) sử dụng công thức **Haversine** dựa trên vĩ độ (`latitude`) và kinh độ (`longitude`).
+  - Calculate the distance from the apartment to NYC center (Times Square) using the **Haversine** formula based on `latitude` and `longitude`.
 - **Binning:**
-  - Biến `minimum_nights` được chia nhóm thành: `short_term` (<7 ngày), `weekly` (7-30 ngày), `monthly` (>30 ngày) để bắt được các hành vi thuê khác nhau.
+  - The `minimum_nights` variable is grouped into: `short_term` (<7 days), `weekly` (7-30 days), `monthly` (>30 days) to capture different rental behaviors.
 
-#### c. Encoding (Mã hóa biến phân loại)
-- **One-Hot Encoding:** Áp dụng cho biến có ít giá trị (`neighbourhood_group`, `room_type`).
+#### c. Encoding
+- **One-Hot Encoding:** Applied to variables with few values (`neighbourhood_group`, `room_type`).
 - **Target Encoding (with Smoothing):**
-  - Áp dụng cho biến `neighbourhood` (hơn 200 giá trị). Thay vì tạo 200 cột mới (gây thưa dữ liệu), ta thay thế tên khu vực bằng giá trung bình của khu vực đó.
-  - **Smoothing:** Để tránh overfitting với các khu vực có ít dữ liệu, công thức được điều chỉnh:
+  - Applied to the `neighbourhood` variable (over 200 values). Instead of creating 200 new columns (causing data sparsity), we replace the area name with the average price of that area.
+  - **Smoothing:** To avoid overfitting with areas having little data, the formula is adjusted:
     $$ S_i = \lambda \times \mu_i + (1 - \lambda) \times \mu_{global} $$
-    Trong đó $\mu_i$ là giá trung bình khu vực $i$, $\mu_{global}$ là giá trung bình toàn tập dữ liệu.
+    Where $\mu_i$ is the average price of area $i$, $\mu_{global}$ is the global average price.
 
-#### d. Scaling (Chuẩn hóa)
-- Sử dụng **Min-Max Scaling** để đưa tất cả các biến số về khoảng $[0, 1]$. Điều này đặc biệt quan trọng với Lasso Regression vì thuật toán này nhạy cảm với độ lớn của dữ liệu (scale-sensitive).
+#### d. Scaling
+- Use **Min-Max Scaling** to bring all variables to the range $[0, 1]$. This is especially important for Lasso Regression as this algorithm is scale-sensitive.
 
-### 2. Thuật toán & Cài đặt (Algorithms & Implementation)
+### 2. Algorithms & Implementation
 
-Dự án tự cài đặt các class `LinearRegression` và `Lasso` kế thừa cấu trúc tương tự Scikit-learn (`fit`, `predict`).
+The project implements `LinearRegression` and `Lasso` classes inheriting a structure similar to Scikit-learn (`fit`, `predict`).
 
-#### a. Linear Regression (Hồi quy tuyến tính)
-**Mục tiêu:** Tìm vector trọng số $\beta$ sao cho tổng bình phương sai số (RSS) là nhỏ nhất:
+#### a. Linear Regression
+**Goal:** Find the weight vector $\beta$ such that the Residual Sum of Squares (RSS) is minimized:
 $$ J(\beta) = ||y - X\beta||_2^2 = \sum_{i=1}^{n} (y_i - x_i^T\beta)^2 $$
 
-**Giải pháp (Closed-form Solution):**
-Nghiệm tối ưu được tính bằng phương trình chuẩn (Normal Equation):
+**Solution (Closed-form Solution):**
+The optimal solution is calculated using the Normal Equation:
 $$ \hat{\beta} = (X^T X)^{-1} X^T y $$
 
-**Implementation với NumPy:**
-Thay vì tính nghịch đảo ma trận $(X^T X)^{-1}$ (tốn kém và kém ổn định), ta giải hệ phương trình tuyến tính $A\beta = b$:
-- Đặt $A = X^T X$ và $b = X^T y$.
-- Sử dụng hàm tối ưu của NumPy:
+**Implementation with NumPy:**
+Instead of calculating the matrix inverse $(X^T X)^{-1}$ (costly and unstable), we solve the linear equation system $A\beta = b$:
+- Set $A = X^T X$ and $b = X^T y$.
+- Use NumPy's optimization function:
   ```python
-  # self.weights = np.linalg.inv(X.T @ X) @ X.T @ y  <-- Không nên dùng
-  self.weights = np.linalg.solve(X.T @ X, X.T @ y) # <-- Tối ưu hơn
+  # self.weights = np.linalg.inv(X.T @ X) @ X.T @ y  <-- Do not use
+  self.weights = np.linalg.solve(X.T @ X, X.T @ y) # <-- More optimal
   ```
 
 #### b. Lasso Regression (L1 Regularization)
-**Mục tiêu:** Tối thiểu hóa hàm mất mát có thêm thành phần điều chuẩn L1 (giúp triệt tiêu các trọng số không quan trọng về 0):
+**Goal:** Minimize the loss function with an added L1 regularization component (helps drive unimportant weights to 0):
 $$ J(\beta) = \frac{1}{2n} ||y - X\beta||_2^2 + \alpha ||\beta||_1 $$
 
-**Giải pháp (Coordinate Descent):**
-Vì hàm L1 không có đạo hàm tại 0, ta không dùng Gradient Descent thông thường mà dùng **Coordinate Descent**. Ta tối ưu từng trọng số $\beta_j$ trong khi giữ cố định các trọng số $\beta_{k \neq j}$.
+**Solution (Coordinate Descent):**
+Since the L1 function is not differentiable at 0, we don't use standard Gradient Descent but **Coordinate Descent**. We optimize each weight $\beta_j$ while keeping weights $\beta_{k \neq j}$ fixed.
 
-Công thức cập nhật cho $\beta_j$:
+Update formula for $\beta_j$:
 $$ \beta_j = S(\rho_j, \alpha) $$
-Trong đó:
-- $\rho_j = \sum_{i=1}^{n} x_{ij} (y_i - \sum_{k \neq j} x_{ik}\beta_k)$ (tương quan giữa biến $j$ và phần dư).
-- $S(z, \alpha)$ là toán tử **Soft Thresholding**:
-  $$ S(z, \alpha) = \begin{cases} z - \alpha & \text{nếu } z > \alpha \\ z + \alpha & \text{nếu } z < -\alpha \\ 0 & \text{nếu } |z| \le \alpha \end{cases} $$
+Where:
+- $\rho_j = \sum_{i=1}^{n} x_{ij} (y_i - \sum_{k \neq j} x_{ik}\beta_k)$ (correlation between variable $j$ and the residual).
+- $S(z, \alpha)$ is the **Soft Thresholding** operator:
+  $$ S(z, \alpha) = \begin{cases} z - \alpha & \text{if } z > \alpha \\ z + \alpha & \text{if } z < -\alpha \\ 0 & \text{if } |z| \le \alpha \end{cases} $$
 
-**Implementation với NumPy:**
-- Tính toán trước các giá trị không đổi để tăng tốc vòng lặp.
-- Sử dụng vectorization để tính dự đoán $\hat{y}$ và phần dư $r = y - \hat{y}$.
-- Cập nhật trọng số lặp đi lặp lại cho đến khi hội tụ (sai số thay đổi nhỏ hơn ngưỡng `tol`).
+**Implementation with NumPy:**
+- Pre-compute constant values to speed up the loop.
+- Use vectorization to calculate predictions $\hat{y}$ and residuals $r = y - \hat{y}$.
+- Update weights iteratively until convergence (error change is smaller than threshold `tol`).
+
+### 3. Evaluation Metrics
+
+To evaluate the performance of the models, we implement the following metrics from scratch:
+
+#### a. Mean Absolute Error (MAE)
+Measures the average magnitude of errors in a set of predictions, without considering their direction.
+$$ MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i| $$
+
+**Implementation:**
+```python
+def mean_absolute_error(y_true, y_pred):
+    return np.mean(np.abs(y_true - y_pred))
+```
+
+#### b. Root Mean Squared Error (RMSE)
+The square root of the average of squared differences between prediction and actual observation. It penalizes larger errors more than MAE.
+$$ RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2} $$
+
+**Implementation:**
+```python
+def root_mean_squared_error(y_true, y_pred):
+    return np.sqrt(np.mean((y_true - y_pred)**2))
+```
+
+#### c. R-squared (R²)
+Represents the proportion of the variance for a dependent variable that's explained by an independent variable or variables in a regression model.
+$$ R^2 = 1 - \frac{SS_{res}}{SS_{tot}} = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2} $$
+
+**Implementation:**
+```python
+def r2_score(y_true, y_pred):
+    ss_res = np.sum((y_true - y_pred)**2)
+    ss_tot = np.sum((y_true - np.mean(y_true))**2)
+    return 1 - (ss_res / ss_tot)
+```
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### Yêu cầu hệ thống
+### System Requirements
 - Python 3.8+
-- Thư viện: NumPy, Matplotlib, Seaborn (xem `requirements.txt`)
+- Libraries: NumPy, Matplotlib, Seaborn (see `requirements.txt`)
 
-### Cài đặt môi trường
+### Environment Setup
 ```bash
 pip install -r requirements.txt
 ```
@@ -172,67 +208,67 @@ pip install -r requirements.txt
 
 ## 🚀 Usage
 
-### Hướng dẫn cách chạy từng phần
-1.  **Khám phá dữ liệu (EDA):**
-    - Mở và chạy `notebooks/01_data_exploration.ipynb` để xem phân tích phân phối, bản đồ và tương quan.
-2.  **Tiền xử lý dữ liệu (Preprocessing):**
-    - Chạy `notebooks/02_preprocessing.ipynb` để thực hiện làm sạch, mã hóa và chuẩn hóa dữ liệu. Kết quả sẽ được lưu vào `data/processed/`.
-3.  **Huấn luyện & Đánh giá (Modeling):**
-    - Chạy `notebooks/03_modeling.ipynb` để huấn luyện mô hình Linear/Lasso và xem kết quả chi tiết.
+### Instructions for running each part
+1.  **Data Exploration (EDA):**
+    - Open and run `notebooks/01_data_exploration.ipynb` to view distribution analysis, maps, and correlations.
+2.  **Preprocessing:**
+    - Run `notebooks/02_preprocessing.ipynb` to perform cleaning, encoding, and scaling. Results will be saved to `data/processed/`.
+3.  **Modeling & Evaluation:**
+    - Run `notebooks/03_modeling.ipynb` to train Linear/Lasso models and view detailed results.
 
 ---
 
 ## 📈 Results
 
-### 1. Kết quả đạt được (Metrics)
-Kết quả đánh giá trên tập Test (20% dữ liệu) sau khi tối ưu hóa tham số:
+### 1. Achieved Metrics
+Evaluation results on the Test set (20% of data) after parameter optimization:
 
-| Metric | Train Set | Test Set | Cross-Validation (Mean) | Ý nghĩa |
+| Metric | Train Set | Test Set | Cross-Validation (Mean) | Meaning |
 |--------|-----------|----------|-------------------------|---------|
-| **R² Score** | **0.554** | **0.546** | 0.553 (±0.011) | Mô hình giải thích được ~54.6% sự biến thiên của giá. |
-| **RMSE** | 0.462 | 0.468 | 0.462 (±0.011) | Sai số trung bình (trên thang log). |
-| **MAE** | 0.335 | 0.334 | 0.335 (±0.005) | Sai số tuyệt đối trung bình. |
+| **R² Score** | **0.554** | **0.546** | 0.553 (±0.011) | The model explains ~54.6% of the price variance. |
+| **RMSE** | 0.462 | 0.468 | 0.462 (±0.011) | Root Mean Squared Error (on log scale). |
+| **MAE** | 0.335 | 0.334 | 0.335 (±0.005) | Mean Absolute Error. |
 
-> **Nhận xét:** Chỉ số R² giữa tập Train và Test chênh lệch rất nhỏ (0.008), cho thấy mô hình **không bị Overfitting** và có khả năng tổng quát hóa tốt.
+> **Comment:** The R² difference between Train and Test sets is very small (0.008), indicating the model is **not Overfitting** and generalizes well.
 
-### 2. Trực quan hóa kết quả (Visualizations)
+### 2. Visualizations
 
 #### a. Cross-Validation Scores
-Biểu đồ cho thấy sự ổn định của mô hình qua 5 lần chia dữ liệu (5-fold CV).
-![CV Scores](images/24.png)
+The chart shows the stability of the model across 5 data splits (5-fold CV).
+![CV Scores](https://github.com/user-attachments/assets/51113648-c78a-4435-a21f-6ba823d677a7)
 
 #### b. Actual vs Predicted
-Biểu đồ phân tán giữa giá thực tế và giá dự đoán. Các điểm tập trung quanh đường chéo đỏ ($y=x$) cho thấy độ chính xác khá tốt, tuy nhiên mô hình có xu hướng dự đoán thấp hơn thực tế ở phân khúc giá rất cao (luxury).
-![Actual vs Predicted](images/25.png)
+Scatter plot between actual and predicted prices. Points clustered around the red diagonal ($y=x$) indicate good accuracy, though the model tends to underpredict in the very high price segment (luxury).
+![Actual vs Predicted](https://github.com/user-attachments/assets/a8467748-48d7-4d44-933c-4e896d531a01)
 
 #### c. Residuals Analysis
-Phân phối của phần dư (Residuals) gần chuẩn (Normal distribution) và tập trung quanh 0, cho thấy mô hình không bị bias lớn.
-![Residuals](images/26.png)
+The distribution of residuals is near-normal and centered around 0, indicating no major bias in the model.
+![Residuals](https://github.com/user-attachments/assets/093617d2-fe72-4bdf-b19f-f790a976884e)
 
 #### d. Feature Importance
-Các yếu tố ảnh hưởng mạnh nhất đến giá phòng.
-- **Tăng giá:** Entire home/apt, Manhattan, các khu vực đắt đỏ.
-- **Giảm giá:** Shared room, Bronx, các khu vực xa trung tâm.
-![Feature Importance](images/27.png)
+Factors most strongly influencing room prices.
+- **Price Increase:** Entire home/apt, Manhattan, expensive areas.
+- **Price Decrease:** Shared room, Bronx, areas far from center.
+![Feature Importance](https://github.com/user-attachments/assets/5798493d-649e-4207-a3d1-a0dadee32acd)
 
-### 3. So sánh và phân tích
+### 3. Comparison and Analysis
 
-#### Phân tích các yếu tố ảnh hưởng (Feature Importance)
-Dựa trên trọng số ($\beta$) của mô hình, ta rút ra các insight quan trọng:
+#### Feature Importance Analysis
+Based on model weights ($\beta$), we draw important insights:
 
-1.  **Vị trí là quan trọng nhất:**
-    - `neighbourhood_group_Manhattan` có hệ số dương lớn nhất (+4.266), khẳng định Manhattan là khu vực đắt đỏ nhất.
-    - `dist_to_center` có hệ số âm (-0.689), nghĩa là càng xa trung tâm, giá càng giảm.
-2.  **Loại phòng quyết định mức giá sàn:**
-    - Các biến `room_type` (Shared room, Private room) có hệ số âm rất lớn so với `Entire home/apt` (được ẩn trong intercept hoặc so sánh tương đối), cho thấy thuê nguyên căn đắt hơn nhiều so với thuê phòng lẻ.
-3.  **Tính khả dụng:**
-    - `availability_365` có hệ số dương (+0.342), gợi ý rằng các căn hộ chuyên nghiệp (trống quanh năm để cho thuê) thường có giá cao hơn các căn hộ chỉ cho thuê ngắn hạn/thời vụ.
+1.  **Location is paramount:**
+    - `neighbourhood_group_Manhattan` has the largest positive coefficient (+4.266), confirming Manhattan as the most expensive area.
+    - `dist_to_center` has a negative coefficient (-0.689), meaning the further from the center, the lower the price.
+2.  **Room type determines price floor:**
+    - `room_type` variables (Shared room, Private room) have very large negative coefficients compared to `Entire home/apt` (hidden in intercept or relative comparison), showing that renting an entire place is much more expensive than single rooms.
+3.  **Availability:**
+    - `availability_365` has a positive coefficient (+0.342), suggesting that professional listings (available year-round) often have higher prices than short-term/seasonal listings.
 
-#### So sánh Linear Regression vs Lasso
-- **Hiệu năng:** Hai mô hình cho kết quả tương đương nhau (R² ~ 0.55).
-- **Lựa chọn:**
-    - **Linear Regression** được chọn làm mô hình cuối cùng vì tính đơn giản và không cần tinh chỉnh tham số $\alpha$ phức tạp mà vẫn đạt hiệu quả cao.
-    - **Lasso** hữu ích trong việc xác định các đặc trưng thừa (đưa hệ số về 0), nhưng trong tập dữ liệu này, hầu hết các đặc trưng đã chọn lọc đều có ý nghĩa thống kê.
+#### Linear Regression vs Lasso Comparison
+- **Performance:** Both models yield similar results (R² ~ 0.55).
+- **Selection:**
+    - **Linear Regression** was chosen as the final model due to its simplicity and effectiveness without needing complex $\alpha$ parameter tuning.
+    - **Lasso** is useful for identifying redundant features (driving coefficients to 0), but in this dataset, most selected features have statistical significance.
 
 ---
 
@@ -240,61 +276,62 @@ Dựa trên trọng số ($\beta$) của mô hình, ta rút ra các insight quan
 
 ```
 ├── data/
-│   ├── raw/                # Dữ liệu thô (AB_NYC_2019.csv)
-│   └── processed/          # Dữ liệu đã qua xử lý (train/test features)
+│   ├── raw/                # Raw data (AB_NYC_2019.csv)
+│   └── processed/          # Processed data (train/test features)
 ├── notebooks/
-│   ├── 01_data_exploration.ipynb  # EDA: Phân tích phân phối, bản đồ, tương quan
+│   ├── 01_data_exploration.ipynb  # EDA: Distribution analysis, maps, correlations
 │   ├── 02_preprocessing.ipynb     # Pipeline: Cleaning, Encoding, Scaling
 │   └── 03_modeling.ipynb          # Modeling: Linear/Lasso from scratch, CV, Evaluation
 ├── src/
-│   ├── data_processing.py  # Các hàm tiện ích xử lý dữ liệu
-│   ├── models.py           # Cài đặt class LinearRegression, Lasso, KFold
-│   └── visualization.py    # Các hàm vẽ biểu đồ
-├── README.md               # Tài liệu báo cáo dự án
-└── requirements.txt        # Danh sách thư viện phụ thuộc
+│   ├── data_processing.py  # Data processing utility functions
+│   ├── models.py           # LinearRegression, Lasso, KFold class implementations
+│   └── visualization.py    # Plotting functions
+├── README.md               # Project documentation
+└── requirements.txt        # Dependency list
 ```
 
 ---
 
 ## 🧩 Challenges & Solutions
 
-### 1. Vectorization với NumPy
-- **Khó khăn:** Chuyển đổi các công thức toán học (như Coordinate Descent) từ dạng vòng lặp (for-loop) sang dạng vector hóa để tăng tốc độ tính toán trên tập dữ liệu lớn. Việc dùng vòng lặp trong Python rất chậm.
-- **Giải pháp:**
-  - Tận dụng triệt để **Broadcasting** của NumPy để thực hiện phép tính trên toàn bộ mảng mà không cần loop.
-  - Sử dụng các phép toán ma trận tối ưu (`@` cho nhân ma trận, `np.sum`, `np.where`).
-  - Pre-compute (tính trước) các giá trị không đổi (như $X^T X$ hoặc $||x_j||^2$) bên ngoài vòng lặp tối ưu.
+### 1. Vectorization with NumPy
+- **Challenge:** Converting mathematical formulas (like Coordinate Descent) from loops (for-loop) to vectorized forms to speed up computation on large datasets. Using loops in Python is very slow.
+- **Solution:**
+  - Fully utilize NumPy's **Broadcasting** to perform operations on entire arrays without loops.
+  - Use optimized matrix operations (`@` for matrix multiplication, `np.sum`, `np.where`).
+  - Pre-compute constant values (like $X^T X$ or $||x_j||^2$) outside the optimization loop.
 
-### 2. Xử lý biến phân loại nhiều giá trị (High Cardinality)
-- **Khó khăn:** Cột `neighbourhood` có hơn 200 giá trị khác nhau. Nếu sử dụng One-Hot Encoding thông thường sẽ tạo ra hơn 200 cột mới, làm ma trận đặc trưng trở nên rất thưa (sparse) và tăng chi phí tính toán, đồng thời dễ gây overfitting.
-- **Giải pháp:** Áp dụng **Target Encoding** kết hợp **Smoothing**. Thay vì tạo cột mới, ta thay thế giá trị của `neighbourhood` bằng giá trung bình của mục tiêu (`price`) tại khu vực đó, có điều chỉnh (smoothing) để tránh nhiễu ở các khu vực ít dữ liệu.
+### 2. Handling High Cardinality Categorical Variables
+- **Challenge:** The `neighbourhood` column has over 200 distinct values. Using standard One-Hot Encoding would create over 200 new columns, making the feature matrix very sparse and increasing computational cost, while also risking overfitting.
+- **Solution:** Apply **Target Encoding** combined with **Smoothing**. Instead of creating new columns, we replace `neighbourhood` values with the average target (`price`) for that area, adjusted (smoothed) to avoid noise in areas with little data.
 
-### 3. Ổn định số học (Numerical Stability)
-- **Khó khăn:** Khi tính toán nghịch đảo ma trận $(X^T X)^{-1}$ trong Linear Regression, nếu ma trận $X^T X$ gần suy biến (singular) hoặc có điều kiện số (condition number) lớn, kết quả sẽ rất thiếu chính xác.
-- **Giải pháp:** Thay vì tính nghịch đảo trực tiếp bằng `np.linalg.inv`, sử dụng `np.linalg.solve` để giải hệ phương trình tuyến tính, giúp thuật toán ổn định và chính xác hơn.
+### 3. Numerical Stability
+- **Challenge:** When calculating the matrix inverse $(X^T X)^{-1}$ in Linear Regression, if the matrix $X^T X$ is near-singular or has a large condition number, the result will be very inaccurate.
+- **Solution:** Instead of calculating the inverse directly with `np.linalg.inv`, use `np.linalg.solve` to solve the linear equation system, making the algorithm more stable and accurate.
 
 ---
 
 ## 🔮 Future Improvements
 
-1.  **Mở rộng mô hình:**
-    - Thử nghiệm các mô hình phi tuyến tính (Non-linear) như **Decision Tree**, **Random Forest** hoặc **Gradient Boosting** (tự cài đặt) để bắt được các mối quan hệ phức tạp hơn mà mô hình tuyến tính bỏ qua.
-    - Cài đặt thêm **Ridge Regression** (L2 Regularization) và **Elastic Net** (kết hợp L1 & L2).
+1.  **Model Expansion:**
+    - Experiment with Non-linear models like **Decision Tree**, **Random Forest**, or **Gradient Boosting** (implemented from scratch) to capture complex relationships that linear models miss.
+    - Implement **Ridge Regression** (L2 Regularization) and **Elastic Net** (combining L1 & L2).
 
-2.  **Cải thiện dữ liệu:**
-    - Tích hợp thêm dữ liệu bên ngoài (External Data) như: khoảng cách đến trạm tàu điện ngầm gần nhất, chỉ số an ninh khu vực, hoặc khoảng cách đến các điểm du lịch nổi tiếng khác ngoài Times Square.
-    - Sử dụng NLP để phân tích nội dung review hoặc tên listing (`name`) để trích xuất thêm đặc trưng (ví dụ: "luxury", "cozy", "view").
+2.  **Data Improvement:**
+    - Integrate External Data such as: distance to nearest subway station, safety index, or distance to other famous tourist spots besides Times Square.
+    - Use NLP to analyze review content or listing names (`name`) to extract more features (e.g., "luxury", "cozy", "view").
 
-3.  **Ứng dụng:**
-    - Xây dựng một Web App đơn giản (sử dụng Streamlit hoặc Flask) cho phép người dùng nhập thông tin căn hộ và nhận dự đoán giá ngay lập tức.
-    - Triển khai API để tích hợp vào các hệ thống khác.
+3.  **Application:**
+    - Build a simple Web App (using Streamlit or Flask) allowing users to input apartment info and get instant price predictions.
+    - Deploy an API to integrate into other systems.
 
 ---
 
 ## 👥 Contributors
 
 **Shinoaki0145**
-- **Role:** Data Scientist & ML Engineer
+- **Role:** Data Scientist
+- **Contact**: thtnhan23@clc.fitus.edu.vn
 - **Github:** [Shinoaki0145](https://github.com/Shinoaki0145)
 
 ---
