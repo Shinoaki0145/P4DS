@@ -2,7 +2,7 @@
 
 This project analyzes and predicts Airbnb rental prices in New York City in 2019. A key feature of this project is the **implementation from scratch** of core Machine Learning algorithms (Linear Regression, Lasso Regression) using the **NumPy** library, instead of relying on high-level libraries like Scikit-learn.
 
-## 📋 Table of Contents
+## Table of Contents
 1. [Introduction](#introduction)
 2. [Dataset](#dataset)
 3. [Method](#method)
@@ -17,7 +17,7 @@ This project analyzes and predicts Airbnb rental prices in New York City in 2019
 
 ---
 
-## 🌟 Introduction
+## Introduction
 
 ### 1. Problem Description
 The project focuses on building a Machine Learning model to predict the **listing price** of Airbnb apartments/rooms in New York City in 2019.
@@ -39,7 +39,7 @@ The project goes beyond just calling available libraries, aiming for in-depth ob
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 ### 1. Data Source
 - **Source:** [New York City Airbnb Open Data (Kaggle)](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)
@@ -83,7 +83,7 @@ The most frequent keywords in room names are often related to location ("Manhatt
 
 ---
 
-## 🛠 Method
+## Method
 
 ### 1. Data Preprocessing Pipeline
 The process is performed sequentially to ensure clean and informative data for the model:
@@ -193,11 +193,11 @@ def r2_score(y_true, y_pred):
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 ### System Requirements
 - Python 3.8+
-- Libraries: NumPy, Matplotlib, Seaborn (see `requirements.txt`)
+- Libraries: NumPy, Matplotlib, Seaborn, ipykernel (see `requirements.txt`)
 
 ### Environment Setup
 ```bash
@@ -206,7 +206,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Instructions for running each part
 1.  **Data Exploration (EDA):**
@@ -218,7 +218,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📈 Results
+## Results
 
 ### 1. Achieved Metrics
 Evaluation results on the Test set (20% of data) after parameter optimization:
@@ -272,7 +272,7 @@ Based on model weights ($\beta$), we draw important insights:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 ├── data/
@@ -292,7 +292,7 @@ Based on model weights ($\beta$), we draw important insights:
 
 ---
 
-## 🧩 Challenges & Solutions
+## Challenges & Solutions
 
 ### 1. Vectorization with NumPy
 - **Challenge:** Converting mathematical formulas (like Coordinate Descent) from loops (for-loop) to vectorized forms to speed up computation on large datasets. Using loops in Python is very slow.
@@ -311,7 +311,7 @@ Based on model weights ($\beta$), we draw important insights:
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 1.  **Model Expansion:**
     - Experiment with Non-linear models like **Decision Tree**, **Random Forest**, or **Gradient Boosting** (implemented from scratch) to capture complex relationships that linear models miss.
@@ -327,14 +327,13 @@ Based on model weights ($\beta$), we draw important insights:
 
 ---
 
-## 👥 Contributors
+## Contributors
 
 **Shinoaki0145**
-- **Role:** Data Scientist
 - **Contact**: thtnhan23@clc.fitus.edu.vn
 - **Github:** [Shinoaki0145](https://github.com/Shinoaki0145)
 
 ---
 
-## 📜 License
+## License
 This project is licensed under the MIT License - see the LICENSE file for details.

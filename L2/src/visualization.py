@@ -590,7 +590,7 @@ def plot_top_words_name(data, column_names, top_n=10):
     top_list = sorted_words[:top_n]
     
     if not top_list:
-        print("No words found.")
+        print("No words found")
         return
         
     labels = [item[0] for item in top_list]
