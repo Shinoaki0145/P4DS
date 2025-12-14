@@ -1175,3 +1175,229 @@ def plot_feature_importance(model, feature_names, best_model_name, best_alpha=No
     for i in range(min(15, len(top_feature_names))):
         print(f"{i+1:2d}. {top_feature_names[i]:<30s}: {top_coef[i]:>10.3f}")
     print("-" * 60)
+
+
+def plot_correlation_heatmap(corr_matrix, column_names, title='Correlation Matrix'):
+    """
+    Plot correlation matrix as a heatmap
+    
+    Parameters:
+    -----------
+    corr_matrix : numpy.ndarray
+        Correlation matrix
+    column_names : list
+        Names of columns
+    title : str
+        Title of the plot
+    """
+    plt.figure(figsize=(12, 10))
+    
+    # Create mask for upper triangle
+    mask = np.triu(np.ones_like(corr_matrix, dtype=bool), k=1)
+    
+    # Create heatmap
+    sns.heatmap(corr_matrix, 
+                annot=True, 
+                fmt='.2f',
+                cmap='coolwarm',
+                center=0,
+                square=True,
+                linewidths=0.5,
+                cbar_kws={"shrink": 0.8, "label": "Correlation Coefficient"},
+                xticklabels=column_names,
+                yticklabels=column_names,
+                mask=mask,
+                vmin=-1, 
+                vmax=1)
+    
+    plt.title(title, fontsize=16, fontweight='bold', pad=20)
+    plt.xticks(rotation=45, ha='right', fontsize=10)
+    plt.yticks(rotation=0, fontsize=10)
+    plt.tight_layout()
+    plt.show()
+    
+    # Print significant correlations
+    print("SIGNIFICANT CORRELATIONS (|r| > 0.3):")
+    
+    n = len(column_names)
+    found_significant = False
+    
+    for i in range(n):
+        for j in range(i+1, n):
+            r = corr_matrix[i, j]
+            if abs(r) > 0.3:
+                found_significant = True
+                strength = "Strong" if abs(r) > 0.7 else "Moderate" if abs(r) > 0.5 else "Weak"
+                direction = "Positive" if r > 0 else "Negative"
+                print(f"\n{column_names[i]} ↔ {column_names[j]}")
+                print(f"  Correlation: {r:+.4f}")
+                print(f"  Strength: {strength} ({direction})")
+    
+    if not found_significant:
+        print("\nNo significant correlations found (|r| > 0.3)")
+
+
+def plot_descriptive_statistics(data, column_names, numeric_columns):
+    """
+    Plot descriptive statistics with histogram and violin plots using Welford's algorithm
+    
+    Parameters:
+    -----------
+    data : numpy.ndarray
+        The dataset containing the data
+    column_names : numpy.ndarray
+        Array of column names
+    numeric_columns : list
+        List of numeric columns to analyze
+    """
+    print(f"{'COLUMN':<30} | {'SKEWNESS ANALYSIS':<32} | {'KURTOSIS ANALYSIS':<40}")
+    print("="*110)
+
+    # Collect data for plotting
+    numeric_data_list = []
+    numeric_col_names = []
+
+    for col in numeric_columns:
+        if col in column_names:
+            col_idx = np.where(column_names == col)[0][0]
+            col_data = data[:, col_idx]
+            
+            # Convert to numeric, remove empty values
+            numeric_vals = []
+            for val in col_data:
+                if val != '':
+                    try:
+                        numeric_vals.append(float(val))
+                    except:
+                        pass
+            
+            if len(numeric_vals) > 0:
+                numeric_data = np.array(numeric_vals, dtype=np.float64)
+                n = len(numeric_data)
+                
+                # Welford's Algorithm - numerical stability for mean & variance
+                mean = np.float64(0.0)
+                M2 = np.float64(0.0)
+                
+                for i, x in enumerate(numeric_data):
+                    delta = x - mean
+                    mean += delta / (i + 1)
+                    M2 += delta * (x - mean)
+                
+                variance = M2 / n if n > 0 else 0
+                std = np.sqrt(variance)
+                
+                # Skewness & Kurtosis
+                deviations = numeric_data - mean
+                m3 = np.mean(deviations**3)
+                m4 = np.mean(deviations**4)
+                skewness = m3 / (std**3) if std > 0 else 0
+                kurtosis = (m4 / (std**4) - 3) if std > 0 else 0
+                
+                # Skewness interpretation
+                if abs(skewness) < 0.5:
+                    skew_interp = "Approximately symmetric"
+                elif skewness > 0.5:
+                    skew_interp = "Right-skewed (positive)"
+                else:
+                    skew_interp = "Left-skewed (negative)"
+                    
+                # Kurtosis interpretation
+                if kurtosis > 1:
+                    kurt_interp = "Heavy-tailed (outliers)"
+                elif kurtosis < -1:
+                    kurt_interp = "Light-tailed (few outliers)"
+                else:
+                    kurt_interp = "Approx. normal tails"
+
+                print(f"{col:<30} | {skewness:>6.2f} ({skew_interp:<23}) | {kurtosis:>6.2f} ({kurt_interp})")
+                
+                # Store for plotting
+                numeric_data_list.append(numeric_data)
+                numeric_col_names.append(col)
+
+    # Histogram plots with KDE
+    n_cols_plot = len(numeric_col_names)
+    n_rows = (n_cols_plot + 2) // 3
+    n_cols_grid = 3
+
+    fig, axes = plt.subplots(n_rows, n_cols_grid, figsize=(20, 5 * n_rows))
+    axes = axes.flatten() if n_cols_plot > 1 else [axes]
+
+    for idx, col in enumerate(numeric_col_names):
+        data_plot = numeric_data_list[idx]
+        
+        mean_val = np.mean(data_plot)
+        median_val = np.median(data_plot)
+        
+        # Calculate skewness for this column
+        std_val = np.std(data_plot)
+        skew_val = np.mean((data_plot - mean_val)**3) / (std_val**3) if std_val > 0 else 0
+        
+        if skew_val > 0.1:
+            skew_direction = "Positive Skew (→)"
+        elif skew_val < -0.1:
+            skew_direction = "Negative Skew (←)"
+        else:
+            skew_direction = "Symmetric (Balance)"
+            
+        use_log = bool((abs(skew_val) > 2) and (data_plot.min() > 0))
+        
+        # Histogram & KDE plots
+        sns.histplot(
+            data=data_plot, 
+            ax=axes[idx], 
+            stat='density',        
+            kde=False,
+            log_scale=use_log,
+            color='skyblue',      
+            edgecolor='black', 
+            alpha=0.6
+        )
+        
+        try:
+            sns.kdeplot(
+                data=data_plot, 
+                ax=axes[idx], 
+                color='blue', 
+                linewidth=1,
+                log_scale=use_log,
+                warn_singular=False
+            )
+        except:
+            pass
+
+        axes[idx].axvline(mean_val, color='crimson', linestyle='--', linewidth=1.5, label='Mean')
+        axes[idx].axvline(median_val, color='green', linestyle='-', linewidth=1.5, label='Median')
+        
+        scale_label = "(Log Scale)" if use_log else "(Normal Scale)"
+        title_text = f"{col}\n[{scale_label}] | {skew_direction} | Skew: {skew_val:.2f}"
+        axes[idx].set_title(title_text, fontsize=10, fontweight='bold')
+        axes[idx].set_ylabel('Density')
+        axes[idx].legend()
+        axes[idx].grid(True, alpha=0.3)
+
+    for idx in range(len(numeric_col_names), len(axes)):
+        fig.delaxes(axes[idx])
+
+    plt.tight_layout()
+    plt.show()
+
+    # Violin plots
+    fig, axes = plt.subplots(n_rows, n_cols_grid, figsize=(20, 5 * n_rows))
+    axes = axes.flatten() if n_cols_plot > 1 else [axes]
+
+    for idx, col in enumerate(numeric_col_names):
+        data_plot = numeric_data_list[idx]
+        
+        sns.violinplot(y=data_plot, ax=axes[idx], color='lightcoral', inner='box', linewidth=1.5)
+        axes[idx].axhline(np.mean(data_plot), color='blue', linestyle='--', linewidth=1, label='Mean')
+        axes[idx].set_title(f'{col} (Violin Plot)', fontsize=11, fontweight='bold')
+        axes[idx].legend(loc='upper right')
+        axes[idx].grid(True, axis='y', alpha=0.3)
+
+    for idx in range(len(numeric_col_names), len(axes)):
+        fig.delaxes(axes[idx])
+        
+    plt.tight_layout()
+    plt.show()
