@@ -946,3 +946,232 @@ def plot_neighbourhood_price_analysis(analysis_data, neighbourhoods_order, top_2
     
     plt.tight_layout()
     plt.show()
+
+
+def plot_cv_scores_comparison(cv_results_lr, cv_results_lasso, best_model_name, best_alpha=None):
+    """
+    Plot comparison of R² and RMSE scores across cross-validation folds
+    
+    Parameters:
+    -----------
+    cv_results_lr : dict
+        Cross-validation results for Linear Regression with keys:
+        'r2_scores', 'mean_r2', 'rmse_scores', 'mean_rmse'
+    cv_results_lasso : dict
+        Cross-validation results for Lasso with same keys as cv_results_lr
+    best_model_name : str
+        Name of the best model ('Linear Regression' or 'Lasso')
+    best_alpha : float, optional
+        Alpha value for Lasso model
+    """
+    fig, axes = plt.subplots(1, 2, figsize=(16, 6))
+    
+    folds = np.arange(1, 6)
+    palette = sns.color_palette("muted")
+    
+    # Plot 1: R² Scores
+    axes[0].plot(folds, cv_results_lr['r2_scores'], 'o-', label='Linear Regression', 
+                linewidth=2.5, markersize=10, color=palette[0])
+    
+    if best_model_name == "Lasso" and cv_results_lasso is not None:
+        axes[0].plot(folds, cv_results_lasso['r2_scores'], 's-', label=f'Lasso (α={best_alpha})', 
+                    linewidth=2.5, markersize=10, color=palette[1])
+        axes[0].axhline(y=cv_results_lasso['mean_r2'], color=palette[1], linestyle='--', 
+                       alpha=0.7, linewidth=2, label='Lasso Mean')
+    
+    axes[0].axhline(y=cv_results_lr['mean_r2'], color=palette[0], linestyle='--', 
+                   alpha=0.7, linewidth=2, label='LR Mean')
+    axes[0].set_xlabel('Fold', fontsize=12, fontweight='bold')
+    axes[0].set_ylabel('R² Score', fontsize=12, fontweight='bold')
+    axes[0].set_title('Cross-Validation R² Scores', fontsize=14, fontweight='bold')
+    axes[0].legend(loc='best', fontsize=10)
+    axes[0].grid(True, alpha=0.3)
+    axes[0].set_xticks(folds)
+    
+    # Plot 2: RMSE Scores
+    axes[1].plot(folds, cv_results_lr['rmse_scores'], 'o-', label='Linear Regression', 
+                linewidth=2.5, markersize=10, color=palette[2])
+    
+    if best_model_name == "Lasso" and cv_results_lasso is not None:
+        axes[1].plot(folds, cv_results_lasso['rmse_scores'], 's-', label=f'Lasso (α={best_alpha})', 
+                    linewidth=2.5, markersize=10, color=palette[3])
+        axes[1].axhline(y=cv_results_lasso['mean_rmse'], color=palette[3], linestyle='--', 
+                       alpha=0.7, linewidth=2, label='Lasso Mean')
+    
+    axes[1].axhline(y=cv_results_lr['mean_rmse'], color=palette[2], linestyle='--', 
+                   alpha=0.7, linewidth=2, label='LR Mean')
+    axes[1].set_xlabel('Fold', fontsize=12, fontweight='bold')
+    axes[1].set_ylabel('RMSE', fontsize=12, fontweight='bold')
+    axes[1].set_title('Cross-Validation RMSE Scores', fontsize=14, fontweight='bold')
+    axes[1].legend(loc='best', fontsize=10)
+    axes[1].grid(True, alpha=0.3)
+    axes[1].set_xticks(folds)
+    
+    plt.tight_layout()
+    plt.show()
+    
+    print("Chart shows model stability across different folds (based on train set only)")
+
+
+def plot_actual_vs_predicted(y_test, y_test_pred, metrics_test, best_model_name, best_alpha=None):
+    """
+    Plot actual vs predicted values on test set
+    
+    Parameters:
+    -----------
+    y_test : numpy.ndarray
+        Actual values from test set
+    y_test_pred : numpy.ndarray
+        Predicted values from test set
+    metrics_test : dict
+        Dictionary containing evaluation metrics ('r2', 'rmse', 'mae')
+    best_model_name : str
+        Name of the best model
+    best_alpha : float, optional
+        Alpha value for Lasso model
+    """
+    fig, ax = plt.subplots(1, 1, figsize=(10, 8))
+    
+    y_min, y_max = y_test.min(), y_test.max()
+    
+    palette = sns.color_palette("muted")
+    color = palette[1] if best_model_name == "Lasso" else palette[0]
+    
+    ax.scatter(y_test, y_test_pred, alpha=0.6, s=20, color=color, edgecolors='white', linewidth=0.5)
+    ax.plot([y_min, y_max], [y_min, y_max], 
+            'r--', lw=2.5, label='Perfect Prediction', alpha=0.8)
+    ax.set_xlabel('Actual price_log', fontsize=12, fontweight='bold')
+    ax.set_ylabel('Predicted price_log', fontsize=12, fontweight='bold')
+    
+    title = f'{best_model_name}'
+    if best_model_name == "Lasso" and best_alpha is not None:
+        title += f' (α={best_alpha})'
+    title += f'\nTest Set: R²={metrics_test["r2"]:.3f}, RMSE={metrics_test["rmse"]:.3f}, MAE={metrics_test["mae"]:.3f}'
+    ax.set_title(title, fontsize=14, fontweight='bold', pad=15)
+    ax.legend(fontsize=11, loc='upper left')
+    ax.grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.show()
+    
+    print(f"Actual vs Predicted chart for best model ({best_model_name}) on test set")
+    print("Points closer to the red line (perfect prediction) indicate better model accuracy")
+
+
+def plot_residuals_analysis(y_test, y_test_pred, best_model_name, best_alpha=None):
+    """
+    Plot residuals distribution and residuals vs predicted values
+    
+    Parameters:
+    -----------
+    y_test : numpy.ndarray
+        Actual values from test set
+    y_test_pred : numpy.ndarray
+        Predicted values from test set
+    best_model_name : str
+        Name of the best model
+    best_alpha : float, optional
+        Alpha value for Lasso model
+    """
+    residuals = y_test - y_test_pred
+    
+    fig, axes = plt.subplots(1, 2, figsize=(16, 6))
+    
+    palette = sns.color_palette("muted")
+    color = palette[1] if best_model_name == "Lasso" else palette[0]
+    
+    # Plot 1: Residuals distribution
+    sns.histplot(x=residuals, bins=50, kde=True, ax=axes[0], 
+                color=color, edgecolor='white', linewidth=0.5, stat='density')
+    axes[0].axvline(x=0, color='crimson', linestyle='--', linewidth=2, 
+                   label=f'Zero line', alpha=0.8)
+    axes[0].set_xlabel('Residuals', fontsize=12, fontweight='bold')
+    axes[0].set_ylabel('Density', fontsize=12, fontweight='bold')
+    title = f'{best_model_name} - Residuals Distribution\n(Test Set)'
+    axes[0].set_title(title, fontsize=14, fontweight='bold')
+    axes[0].legend(fontsize=10)
+    axes[0].grid(True, alpha=0.3)
+    
+    # Plot 2: Residuals vs predicted
+    axes[1].scatter(y_test_pred, residuals, alpha=0.6, s=20, 
+                   color=color, edgecolors='white', linewidth=0.5)
+    axes[1].axhline(y=0, color='crimson', linestyle='--', linewidth=2, 
+                   label='Zero line', alpha=0.8)
+    axes[1].set_xlabel('Predicted price_log', fontsize=12, fontweight='bold')
+    axes[1].set_ylabel('Residuals', fontsize=12, fontweight='bold')
+    title = f'{best_model_name} - Residuals vs Predicted\n(Test Set)'
+    axes[1].set_title(title, fontsize=14, fontweight='bold')
+    axes[1].legend(fontsize=10)
+    axes[1].grid(True, alpha=0.3)
+    
+    plt.tight_layout()
+    plt.show()
+    
+    print(f"\nResiduals Analysis ({best_model_name} on Test Set):")
+    print(f"  Mean of residuals: {residuals.mean():.6f}")
+    print(f"  Std of residuals: {residuals.std():.3f}")
+    print("\nIdeal: residuals should have normal distribution with mean≈0 and no pattern in residuals vs predicted plot")
+
+
+def plot_feature_importance(model, feature_names, best_model_name, best_alpha=None, top_n=20):
+    """
+    Plot feature importance based on model coefficients
+    
+    Parameters:
+    -----------
+    model : object
+        Trained model with coef_ attribute
+    feature_names : numpy.ndarray
+        Array of feature names
+    best_model_name : str
+        Name of the best model
+    best_alpha : float, optional
+        Alpha value for Lasso model
+    top_n : int, optional
+        Number of top features to display (default: 20)
+    """
+    coef = model.coef_
+    
+    # Find top features
+    abs_coef = np.abs(coef)
+    top_indices = np.argsort(abs_coef)[-top_n:][::-1]
+    
+    # Get names and coefficients of top features
+    top_feature_names = feature_names[top_indices]
+    top_coef = coef[top_indices]
+    
+    fig, ax = plt.subplots(1, 1, figsize=(12, 10))
+    
+    palette_name = 'Oranges_r' if best_model_name == "Lasso" else 'Blues_r'
+    sns.barplot(x=top_coef, y=top_feature_names, hue=top_feature_names, 
+               palette=palette_name, legend=False, ax=ax)
+    
+    ax.set_xlabel('Coefficient Value', fontsize=12, fontweight='bold')
+    ax.set_ylabel('')
+    title = f'Top {top_n} Features - {best_model_name}'
+    if best_model_name == "Lasso" and best_alpha is not None:
+        title += f' (α={best_alpha})'
+    ax.set_title(title, fontsize=14, fontweight='bold', pad=15)
+    ax.axvline(x=0, color='black', linestyle='-', linewidth=1)
+    ax.grid(True, alpha=0.3, axis='x')
+    
+    for i, p in enumerate(ax.patches):
+        width = p.get_width()
+        ax.text(width + (np.max(np.abs(top_coef)) * 0.01), 
+               p.get_y() + p.get_height()/2,
+               f'{top_coef[i]:.3f}',
+               va='center', fontsize=9, fontweight='bold')
+    
+    plt.tight_layout()
+    plt.show()
+    
+    if best_model_name == "Lasso":
+        zero_features_mask = np.abs(coef) < 1e-6
+        n_zero_features = zero_features_mask.sum()
+        print(f"\nLasso reduced {n_zero_features} features to 0 (removed)")
+    
+    print(f"\nTop 15 most important features according to {best_model_name}:")
+    print("-" * 60)
+    for i in range(min(15, len(top_feature_names))):
+        print(f"{i+1:2d}. {top_feature_names[i]:<30s}: {top_coef[i]:>10.3f}")
+    print("-" * 60)

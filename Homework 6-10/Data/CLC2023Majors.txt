@@ -1,0 +1,450 @@
+Trường Đại học Khoa học tự nhiên
+Khoa Công nghệ thông tin
+THÔNG BÁO KẾT QUẢ XÉT CHUYÊN NGÀNH
+ĐỢT THÁNG 9/2025
+STT MSSV Họ SV Tên SV CHUYÊN NGÀNH
+1 20127419 Nguyễn Minh Việt Công nghệ thông tin
+2 21127061 Trần Gia Huy Thị giác máy tính
+3 22127189 Phạm Bình Khánh Công nghệ thông tin
+4 22127315 Nguyễn Hoàng Uyển Như Công nghệ thông tin
+5 22127403 Nguyễn Trần Minh Thư Công nghệ thông tin
+6 23127001 Nguyễn Lê Quan Anh Công nghệ thông tin
+7 23127003 Phạm Ngọc Dũng Công nghệ tri thức
+8 23127004 Lê Nhật Khôi Khoa học dữ liệu
+9 23127005 Nguyễn Anh Kiệt Công nghệ tri thức
+10 23127006 Trần Nguyễn Khải Luân Kỹ thuật phần mềm
+11 23127007 Trần Công Minh Khoa học máy tính (hướng TTNT)
+12 23127008 Nguyễn Trọng Tài Thị giác máy tính
+13 23127011 Lê Anh Duy Khoa học máy tính (hướng TTNT)
+14 23127014 Nguyễn Tường Huy Mạng máy tính và Viễn thông (hướng ATTT)
+15 23127015 Nguyễn Hoàng Anh Khoa Khoa học máy tính (hướng TTNT)
+16 23127016 Lưu Huy Minh Quang Thị giác máy tính
+17 23127017 Nguyễn Hoàng Minh Tâm Khoa học máy tính (hướng TTNT)
+18 23127018 Lê Trường Thịnh Khoa học máy tính (hướng TTNT)
+19 23127020 Biện Xuân An Kỹ thuật phần mềm
+20 23127021 Bùi Thế Anh Mạng máy tính và Viễn thông (hướng ATTT)
+21 23127022 Nguyễn Đức Anh Công nghệ tri thức
+22 23127023 Phan Nhựt Anh Khoa học máy tính (hướng TTNT)
+23 23127024 Đinh Bảo Bảo Khoa học máy tính (hướng TTNT)
+24 23127025 Đoàn Lê Gia Bảo Công nghệ thông tin
+25 23127026 Nguyễn Đỗ Bảo Khoa học dữ liệu
+26 23127027 Phạm Ngọc Gia Bảo Công nghệ thông tin
+27 23127028 Phan Thanh Bình Công nghệ tri thức
+28 23127029 Vũ Khắc Bình Công nghệ tri thức
+29 23127031 Nguyễn Ngọc Minh Châu Hệ thống thông tin
+30 23127032 Trần Khôn Chí Kỹ thuật phần mềm
+31 23127033 Bùi Dương Duy Cường Kỹ thuật phần mềm
+32 23127034 Nguyễn Mạnh Cường Công nghệ tri thức
+33 23127035 Lee Kun Da Kỹ thuật phần mềm
+34 23127036 Bùi Đỗ Hải Đăng Mạng máy tính và Viễn thông (hướng ATTT)
+35 23127037 Tôn Thất Minh Đăng Thị giác máy tính
+36 23127038 Lê Võ Phú Danh Hệ thống thông tin
+37 23127039 Đinh Ngọc Anh Dương Thị giác máy tính
+38 23127040 Bùi Minh Duy Khoa học dữ liệu
+39 23127042 Nguyễn Đặng Minh Duy Công nghệ tri thức
+40 23127043 Hoàng Minh Giang Kỹ thuật phần mềm
+41 23127044 Đỗ Văn Hà Kỹ thuật phần mềm
+42 23127045 Đinh Viết Hải Công nghệ thông tin
+43 23127046 Tôn Thất Hoàn Hệ thống thông tin
+44 23127047 Lưu Huy Hoàng Kỹ thuật phần mềm
+45 23127048 Phan Thế Hoàng Khoa học máy tính (hướng TTNT)
+46 23127049 Đỗ Hoàng Duy Hưng Công nghệ tri thức
+47 23127050 Nguyễn Đăng Hưng Kỹ thuật phần mềm
+1/9STT MSSV Họ SV Tên SV CHUYÊN NGÀNH
+48 23127051 Cao Tấn Hoàng Huy Công nghệ thông tin
+49 23127052 Dương Gia Huy Kỹ thuật phần mềm
+50 23127053 Huỳnh Nhất Huy Mạng máy tính và Viễn thông (hướng ATTT)
+51 23127056 Trần Cẩm Huy Khoa học dữ liệu
+52 23127057 Phạm Nam Huyên Thị giác máy tính
+53 23127059 Hồ Văn Khải Kỹ thuật phần mềm
+54 23127060 Ninh Văn Khải Kỹ thuật phần mềm
+55 23127061 Trương Lý Khải Kỹ thuật phần mềm
+56 23127062 Lâm Vĩ Khang Kỹ thuật phần mềm
+57 23127065 Ngô Nguyễn Thế Khoa Kỹ thuật phần mềm
+58 23127066 Nguyễn Bách Khoa Khoa học máy tính (hướng TTNT)
+59 23127068 Huỳnh Lê Khôi Thị giác máy tính
+60 23127069 Nguyễn Minh Khôi Công nghệ tri thức
+61 23127070 Nguyễn Minh Khôi Công nghệ thông tin
+62 23127071 Nguyễn Tấn Huy Khôi Hệ thống thông tin
+63 23127072 Phan Huỳnh Minh Khôi Khoa học máy tính (hướng TTNT)
+64 23127073 Phi Anh Khôi Khoa học dữ liệu
+65 23127075 Lê Trung Kiên Kỹ thuật phần mềm
+66 23127076 Cáp Văn Kiệt Công nghệ tri thức
+67 23127077 Đặng Anh Kiệt Mạng máy tính và Viễn thông (hướng ATTT)
+68 23127078 Quách Châu Hạo Kiệt Công nghệ tri thức
+69 23127079 Châu Trung Kỳ Công nghệ tri thức
+70 23127080 Nguyễn Đức Khương Lam Khoa học dữ liệu
+71 23127081 Nguyễn Phan Hùng Linh Kỹ thuật phần mềm
+72 23127082 Nguyễn Thị Khánh Linh Khoa học máy tính (hướng TTNT)
+73 23127083 Phạm Khánh Linh Khoa học dữ liệu
+74 23127084 Dương Thành Lộc Khoa học máy tính (hướng TTNT)
+75 23127085 Phạm Phát Lộc Hệ thống thông tin
+76 23127086 Huỳnh Sĩ Luân Thị giác máy tính
+77 23127088 Nguyễn Đình Mạnh Khoa học máy tính (hướng TTNT)
+78 23127089 Nguyễn Quang Minh Hệ thống thông tin
+79 23127090 Trương Nhật Minh Công nghệ tri thức
+80 23127091 Văn Thị Diễm My Khoa học máy tính (hướng TTNT)
+81 23127092 Nguyễn Nhật Nam Kỹ thuật phần mềm
+82 23127093 Nguyễn Gia Nghi Kỹ thuật phần mềm
+83 23127094 Hoàng Nhân Thị giác máy tính
+84 23127095 Nguyễn Trọng Nhân Thị giác máy tính
+85 23127096 Phan Nhật Thiện Nhân Khoa học dữ liệu
+86 23127097 Trần Trí Nhân Kỹ thuật phần mềm
+87 23127099 Nguyễn Ngọc Hưng Phát Mạng máy tính và Viễn thông (hướng ATTT)
+88 23127100 Huỳnh Tuấn Phong Thị giác máy tính
+89 23127101 Từ Thế Phong Công nghệ tri thức
+90 23127102 Lê Quang Phúc Kỹ thuật phần mềm
+91 23127104 Nguyễn Bình Minh Phương Kỹ thuật phần mềm
+92 23127106 Nguyễn Hoàng Quân Khoa học máy tính (hướng TTNT)
+93 23127107 Nguyễn Huy Quân Công nghệ thông tin
+94 23127108 Lê Hữu Minh Quang Hệ thống thông tin
+95 23127109 Nguyễn Lê Quang Công nghệ tri thức
+96 23127110 Vũ Ngọc Minh Quang Hệ thống thông tin
+97 23127112 Huỳnh Ngọc Quốc Mạng máy tính và Viễn thông (hướng ATTT)
+98 23127113 Nguyễn Trần Phú Quý Mạng máy tính và Viễn thông (hướng ATTT)
+99 23127114 Văn Ngọc Quý Kỹ thuật phần mềm
+100 23127115 Mạch Quốc Tấn Kỹ thuật phần mềm
+101 23127116 Nguyễn Quang Thái Kỹ thuật phần mềm
+2/9STT MSSV Họ SV Tên SV CHUYÊN NGÀNH
+102 23127118 Lê Nguyên Thảo Công nghệ thông tin
+103 23127119 Nguyễn Thu Thảo Công nghệ thông tin
+104 23127120 Trần Danh Thiện Công nghệ tri thức
+105 23127121 Bùi Hữu Thịnh Kỹ thuật phần mềm
+106 23127122 Nguyễn Duy Thịnh Kỹ thuật phần mềm
+107 23127123 Nguyễn Phúc Thọ Mạng máy tính và Viễn thông (hướng ATTT)
+108 23127124 Ngô Huỳnh Gia Thoại Mạng máy tính và Viễn thông (hướng ATTT)
+109 23127125 Nguyễn Hiếu Thuận Kỹ thuật phần mềm
+110 23127127 Lưu Nhật Tiến Thị giác máy tính
+111 23127128 Nguyễn Thành Tiến Kỹ thuật phần mềm
+112 23127130 Nguyễn Hữu Anh Trí Khoa học dữ liệu
+113 23127131 Đởm Quang Minh Triết Hệ thống thông tin
+114 23127132 Phạm Minh Triết Mạng máy tính và Viễn thông (hướng ATTT)
+115 23127133 Tô Trần Hoàng Triệu Hệ thống thông tin
+116 23127134 Phan Phú Trọng Công nghệ thông tin
+117 23127136 Lê Nguyễn Nhật Trường Kỹ thuật phần mềm
+118 23127137 Đỗ Ngọc Minh Tuấn Công nghệ tri thức
+119 23127138 Phan Trung Tuấn Hệ thống thông tin
+120 23127139 Hoàng Ngọc Tùng Công nghệ thông tin
+121 23127140 Đặng Nguyễn Duy Tuyên Công nghệ tri thức
+122 23127141 Trần Cao Vân Công nghệ tri thức
+123 23127143 Thiều Quang Vinh Công nghệ tri thức
+124 23127144 Đinh Đại Vũ Hệ thống thông tin
+125 23127145 Khưu Ngọc Ý Vy Hệ thống thông tin
+126 23127146 Lê Chí Vỹ Khoa học máy tính (hướng TTNT)
+127 23127147 Phan Thị Hương Xuân Công nghệ tri thức
+128 23127148 Ân Tiến Nguyên An Kỹ thuật phần mềm
+129 23127149 Nguyễn Bình An Hệ thống thông tin
+130 23127150 Lê Quốc Anh Khoa học máy tính (hướng TTNT)
+131 23127151 Lê Tuấn Anh Công nghệ tri thức
+132 23127152 Nguyễn Tuấn Anh Kỹ thuật phần mềm
+133 23127153 Huỳnh Gia Âu Kỹ thuật phần mềm
+134 23127154 Huỳnh Gia Bảo Khoa học máy tính (hướng TTNT)
+135 23127155 Lê Đức Ngọc Bảo Kỹ thuật phần mềm
+136 23127156 Nguyễn Đình Quốc Bảo Khoa học dữ liệu
+137 23127157 Nguyễn Hoàng Gia Bảo Khoa học dữ liệu
+138 23127158 Nguyễn Thanh Gia Bảo Kỹ thuật phần mềm
+139 23127159 Phạm Lê Thái Bảo Công nghệ thông tin
+140 23127161 Nguyễn Ngọc Cảnh Công nghệ tri thức
+141 23127162 Trần Nguyễn Song Chi Hệ thống thông tin
+142 23127164 Lê Phú Cường Kỹ thuật phần mềm
+143 23127165 Nguyễn Hải Đăng Khoa học máy tính (hướng TTNT)
+144 23127166 Nguyễn Hoàng Đăng Kỹ thuật phần mềm
+145 23127167 Tô Đan Hoàng Đăng Công nghệ tri thức
+146 23127168 Cao Trần Bá Đạt Khoa học dữ liệu
+147 23127169 Lê Trọng Đạt Thị giác máy tính
+148 23127170 Phạm Thành Đạt Kỹ thuật phần mềm
+149 23127171 Đỗ Duy Đông Mạng máy tính và Viễn thông (hướng ATTT)
+150 23127172 Nguyễn Chí Đức Công nghệ thông tin
+151 23127173 Trần Hải Đức Thị giác máy tính
+152 23127174 Hồ Minh Dũng Mạng máy tính và Viễn thông (hướng ATTT)
+153 23127176 Huỳnh Lê Khương Duy Công nghệ thông tin
+154 23127177 Lê Nhật Duy Mạng máy tính và Viễn thông (hướng ATTT)
+155 23127178 Lê Nhựt Duy Kỹ thuật phần mềm
+3/9STT MSSV Họ SV Tên SV CHUYÊN NGÀNH
+156 23127179 Nguyễn Bảo Duy Kỹ thuật phần mềm
+157 23127180 Nguyễn Lê Nhật Duy Mạng máy tính và Viễn thông (hướng ATTT)
+158 23127181 Nguyễn Trần Quốc Duy Khoa học máy tính (hướng TTNT)
+159 23127182 Nguyễn Trường Duy Hệ thống thông tin
+160 23127183 Phạm Vũ Ngọc Duy Công nghệ thông tin
+161 23127184 Lê Phạm Kiều Duyên Hệ thống thông tin
+162 23127185 Mai Thị Kim Duyên Kỹ thuật phần mềm
+163 23127187 Trần Lý Nhật Hào Công nghệ tri thức
+164 23127188 Nguyễn Đăng Hiển Công nghệ tri thức
+165 23127189 Trần Trọng Hiếu Công nghệ tri thức
+166 23127190 Võ Trung Hiếu Khoa học dữ liệu
+167 23127192 Nguyễn Văn Hộp Hệ thống thông tin
+168 23127193 Bùi Quang Hùng Mạng máy tính và Viễn thông (hướng ATTT)
+169 23127194 Nguyễn Hoàng Phi Hùng Kỹ thuật phần mềm
+170 23127195 Trần Mạnh Hùng Kỹ thuật phần mềm
+171 23127196 Đặng Quang Hưng Công nghệ tri thức
+172 23127199 Trần Gia Huy Khoa học máy tính (hướng TTNT)
+173 23127200 Nguyễn Minh Kha Mạng máy tính và Viễn thông (hướng ATTT)
+174 23127203 Trần Hữu Khang Thị giác máy tính
+175 23127205 Lâm Hữu Khánh Kỹ thuật phần mềm
+176 23127206 Lê Nguyễn Nhật Khánh Mạng máy tính và Viễn thông (hướng ATTT)
+177 23127207 Đặng Đăng Khoa Kỹ thuật phần mềm
+178 23127209 Nguyễn Anh Khoa Kỹ thuật phần mềm
+179 23127210 Nguyễn Đăng Khoa Công nghệ tri thức
+180 23127211 Nguyễn Lê Hồ Anh Khoa Kỹ thuật phần mềm
+181 23127212 Nguyễn Quang Đăng Khoa Kỹ thuật phần mềm
+182 23127215 Trần Tuấn Kiệt Khoa học máy tính (hướng TTNT)
+183 23127216 Lê Hoàng Lâm Kỹ thuật phần mềm
+184 23127219 Ngô Bảo Long Công nghệ thông tin
+185 23127221 Nguyễn Tiến Luật Kỹ thuật phần mềm
+186 23127223 Nguyễn Lê Thiên Lý Công nghệ tri thức
+187 23127224 Nguyễn Lê Trúc Mai Thị giác máy tính
+188 23127226 Nguyễn Đăng Minh Mạng máy tính và Viễn thông (hướng ATTT)
+189 23127227 Nguyễn Hiểu Minh Mạng máy tính và Viễn thông (hướng ATTT)
+190 23127228 Phạm Văn Minh Kỹ thuật phần mềm
+191 23127229 Phan Quang Minh Hệ thống thông tin
+192 23127230 Đặng Lữ Kiều My Công nghệ tri thức
+193 23127231 Tô Thảo My Hệ thống thông tin
+194 23127232 Trần Hoàng Nam Thị giác máy tính
+195 23127234 Nguyễn An Nghiệp Kỹ thuật phần mềm
+196 23127236 Lê Hồng Ngọc Thị giác máy tính
+197 23127237 Lê Trương Bảo Ngọc Hệ thống thông tin
+198 23127238 Trần Hoài Thiện Nhân Khoa học dữ liệu
+199 23127239 Lê Nguyên Nhật Công nghệ tri thức
+200 23127240 Phan Trung Nhựt Khoa học dữ liệu
+201 23127241 Đoàn Thành Phát Kỹ thuật phần mềm
+202 23127242 Nguyễn Hữu Kiến Phi Khoa học dữ liệu
+203 23127244 Lê Thiên Phú Kỹ thuật phần mềm
+204 23127246 Nguyễn Trần Thiên Phú Thị giác máy tính
+205 23127247 Châu Đình Phúc Khoa học dữ liệu
+206 23127248 Nguyễn Hữu Phúc Khoa học dữ liệu
+207 23127249 Nguyễn Phạm Thiện Phúc Mạng máy tính và Viễn thông (hướng ATTT)
+208 23127250 Trần Hồng Phương Khoa học máy tính (hướng TTNT)
+209 23127252 Nguyễn Tiến Quốc Khoa học dữ liệu
+4/9STT MSSV Họ SV Tên SV CHUYÊN NGÀNH
+210 23127254 Nguyễn Thị Như Quỳnh Hệ thống thông tin
+211 23127255 Nguyễn Thọ Tài Mạng máy tính và Viễn thông (hướng ATTT)
+212 23127256 Trần Thị Xuân Tài Hệ thống thông tin
+213 23127259 Nguyễn Tấn Thắng Thị giác máy tính
+214 23127260 Tô Minh Thắng Kỹ thuật phần mềm
+215 23127261 Vương Ngũ Tín Thành Kỹ thuật phần mềm
+216 23127262 Lý Quốc Thạnh Kỹ thuật phần mềm
+217 23127263 Vũ Thế Anh Công nghệ tri thức
+218 23127264 Trần Thọ Thị giác máy tính
+219 23127266 Nguyễn Anh Thư Thị giác máy tính
+220 23127269 Đỗ Đăng Nhật Tiến Hệ thống thông tin
+221 23127271 Võ Ngọc Bích Trâm Kỹ thuật phần mềm
+222 23127272 Nguyễn Thiên Nhã Trân Thị giác máy tính
+223 23127273 Lê Minh Trí Kỹ thuật phần mềm
+224 23127278 Nguyễn Văn Tuấn Mạng máy tính và Viễn thông (hướng ATTT)
+225 23127279 Võ Văn Tuấn Thị giác máy tính
+226 23127280 Nguyễn Hiền Tuấn Anh Kỹ thuật phần mềm
+227 23127281 Đặng Nghi Văn Kỹ thuật phần mềm
+228 23127282 Trần Sở Vinh Công nghệ tri thức
+229 23127284 Nguyễn Ngọc Mai Xuân Hệ thống thông tin
+230 23127289 Bùi Huy Giáp Công nghệ tri thức
+231 23127290 Nguyễn Kiến Hào Mạng máy tính và Viễn thông (hướng ATTT)
+232 23127296 Nguyễn Thành Luân Mạng máy tính và Viễn thông (hướng ATTT)
+233 23127300 Hà Bảo Ngọc Kỹ thuật phần mềm
+234 23127302 Trần Quang Phúc Mạng máy tính và Viễn thông (hướng ATTT)
+235 23127303 Hồ Tấn Quốc Kỹ thuật phần mềm
+236 23127305 Nguyễn Hiệp Thắng Khoa học dữ liệu
+237 23127306 Nguyễn Phương Thảo Khoa học máy tính (hướng TTNT)
+238 23127307 Nguyễn Phạm Minh Thư Kỹ thuật phần mềm
+239 23127309 Trần Dương Hải Thượng Hệ thống thông tin
+240 23127310 Nguyễn Kim Thủy Hệ thống thông tin
+241 23127315 Nguyễn Trần Thiên An Khoa học máy tính (hướng TTNT)
+242 23127316 Nguyễn Tuấn An Mạng máy tính và Viễn thông (hướng ATTT)
+243 23127317 Nguyễn Văn An Khoa học dữ liệu
+244 23127318 Lê Hồ Đan Anh Hệ thống thông tin
+245 23127320 Phạm Hoàng Anh Hệ thống thông tin
+246 23127321 Vũ Anh Thị giác máy tính
+247 23127323 Chang Jar Bao Thị giác máy tính
+248 23127325 Lê Gia Bảo Mạng máy tính và Viễn thông (hướng ATTT)
+249 23127326 Lê Mai Hoài Bảo Kỹ thuật phần mềm
+250 23127327 Lưu Ngô Quốc Bảo Hệ thống thông tin
+251 23127328 Nguyễn Quốc Bảo Hệ thống thông tin
+252 23127329 Nguyễn Quốc Bảo Công nghệ tri thức
+253 23127330 Ngô An Bình Công nghệ thông tin
+254 23127331 Nguyễn Công Chiến Thị giác máy tính
+255 23127332 Trần Tiến Cường Khoa học dữ liệu
+256 23127333 Trương Quốc Cường Khoa học máy tính (hướng TTNT)
+257 23127334 Nguyễn Thành Dâng Kỹ thuật phần mềm
+258 23127336 Tô Hữu Danh Kỹ thuật phần mềm
+259 23127337 Bùi Đức Đạt Công nghệ thông tin
+260 23127338 Lữ Bảo Đạt Công nghệ tri thức
+261 23127339 Mai Tấn Đạt Hệ thống thông tin
+262 23127340 Ngô Thế Đạt Hệ thống thông tin
+263 23127341 Ngô Trần Quang Đạt Kỹ thuật phần mềm
+5/9STT MSSV Họ SV Tên SV CHUYÊN NGÀNH
+264 23127342 Nguyễn Minh Đạt Thị giác máy tính
+265 23127343 Nguyễn Thành Đạt Công nghệ tri thức
+266 23127344 Trương Thành Đạt Kỹ thuật phần mềm
+267 23127345 Võ Thành Đạt Hệ thống thông tin
+268 23127346 Vũ Thành Đạt Thị giác máy tính
+269 23127347 Huỳnh Minh Đoàn Hệ thống thông tin
+270 23127348 Nguyễn Thành Đông Mạng máy tính và Viễn thông (hướng ATTT)
+271 23127349 Hà Minh Đức Hệ thống thông tin
+272 23127351 Lê Minh Đức Khoa học dữ liệu
+273 23127352 Huỳnh Hữu Dũng Công nghệ tri thức
+274 23127353 Lương Văn Dũng Mạng máy tính và Viễn thông (hướng ATTT)
+275 23127354 Vũ Tiến Dũng Thị giác máy tính
+276 23127355 Phạm Hồng Thái Dương Hệ thống thông tin
+277 23127356 Đinh Tuấn Duy Mạng máy tính và Viễn thông (hướng ATTT)
+278 23127357 Lê Anh Duy Kỹ thuật phần mềm
+279 23127358 Trần Bình Duy Mạng máy tính và Viễn thông (hướng ATTT)
+280 23127359 Võ Trần Quốc Duy Công nghệ tri thức
+281 23127360 Lê Thanh Hải Thị giác máy tính
+282 23127361 Thạch Ngọc Hân Khoa học dữ liệu
+283 23127362 Phạm Anh Hào Công nghệ thông tin
+284 23127363 Võ Nhật Hào Hệ thống thông tin
+285 23127364 Đặng Nguyễn Thành Hiếu Kỹ thuật phần mềm
+286 23127365 Kiều Duy Hiếu Mạng máy tính và Viễn thông (hướng ATTT)
+287 23127366 Võ Lê Ngọc Hiếu Công nghệ tri thức
+288 23127367 Hà Thư Hoàng Công nghệ tri thức
+289 23127368 Nguyễn Minh Hoàng Công nghệ thông tin
+290 23127369 Nguyễn Nhật Hoàng Mạng máy tính và Viễn thông (hướng ATTT)
+291 23127370 Trần Huy Hoàng Hệ thống thông tin
+292 23127371 Lê Võ Xuân Hưng Khoa học dữ liệu
+293 23127372 Mai Xuân Hưng Kỹ thuật phần mềm
+294 23127373 Nguyễn Đình Thái Hưng Kỹ thuật phần mềm
+295 23127374 Trần Trọng Hưng Mạng máy tính và Viễn thông (hướng ATTT)
+296 23127375 Phạm Cao Thu Hương Thị giác máy tính
+297 23127376 Hồ Gia Huy Công nghệ tri thức
+298 23127377 Lê Nhựt Huy Hệ thống thông tin
+299 23127378 Nguyễn Gia Huy Kỹ thuật phần mềm
+300 23127379 Thái Minh Huy Kỹ thuật phần mềm
+301 23127381 Lâm Chí Khải Công nghệ tri thức
+302 23127382 Nguyễn Phạm Văn Khải Công nghệ tri thức
+303 23127383 Lý Mạnh Nguyên Khang Thị giác máy tính
+304 23127384 Huỳnh Lê Duy Khánh Khoa học máy tính (hướng TTNT)
+305 23127385 Lưu Quốc Khánh Hệ thống thông tin
+306 23127386 Nguyễn Duy Khánh Công nghệ tri thức
+307 23127388 Nguyễn Văn Khánh Mạng máy tính và Viễn thông (hướng ATTT)
+308 23127389 Tô Quốc Khánh Hệ thống thông tin
+309 23127390 Huỳnh Đăng Khoa Công nghệ thông tin
+310 23127391 Nguyễn Anh Khoa Công nghệ thông tin
+311 23127392 Nguyễn Bá Đăng Khoa Kỹ thuật phần mềm
+312 23127393 Nguyễn Đăng Khoa Kỹ thuật phần mềm
+313 23127394 Thái Minh Khoa Công nghệ tri thức
+314 23127395 Trần Anh Khoa Kỹ thuật phần mềm
+315 23127396 Lương Linh Khôi Kỹ thuật phần mềm
+316 23127398 Đinh Xuân Khương Khoa học máy tính (hướng TTNT)
+317 23127400 Đinh Hồng Kiên Công nghệ tri thức
+6/9STT MSSV Họ SV Tên SV CHUYÊN NGÀNH
+318 23127401 Tạ Thiên Lâm Khoa học máy tính (hướng TTNT)
+319 23127402 Trương Hoàng Lâm Kỹ thuật phần mềm
+320 23127404 Lê Tuấn Lộc Kỹ thuật phần mềm
+321 23127405 Lương Thành Lộc Công nghệ tri thức
+322 23127406 Nguyễn Tấn Lộc Mạng máy tính và Viễn thông (hướng ATTT)
+323 23127407 Trần Hữu Lộc Công nghệ tri thức
+324 23127408 Nguyễn Thành Lợi Khoa học dữ liệu
+325 23127409 Bùi Hải Long Khoa học máy tính (hướng TTNT)
+326 23127411 Lê Long Mạng máy tính và Viễn thông (hướng ATTT)
+327 23127412 Lê Hoàng Long Mạng máy tính và Viễn thông (hướng ATTT)
+328 23127413 Lý Thành Luân Công nghệ tri thức
+329 23127414 Nguyễn Minh Luân Kỹ thuật phần mềm
+330 23127415 Trần Hữu Lượng Công nghệ tri thức
+331 23127417 Đào Hoàng Đức Mạnh Công nghệ thông tin
+332 23127419 Cao Phạm Tuấn Minh Công nghệ tri thức
+333 23127420 Đỗ Thành Minh Hệ thống thông tin
+334 23127421 Nguyễn Đức Nhật Minh Mạng máy tính và Viễn thông (hướng ATTT)
+335 23127422 Nguyễn Văn Minh Kỹ thuật phần mềm
+336 23127423 Nguyễn Văn Minh Thị giác máy tính
+337 23127425 Tăng Nhật Minh Công nghệ tri thức
+338 23127426 Thái Bá Quang Minh Công nghệ tri thức
+339 23127427 Vũ Hoàng Minh Khoa học dữ liệu
+340 23127428 Nguyễn Thị Trà My Hệ thống thông tin
+341 23127430 Đinh Hoàng Nam Kỹ thuật phần mềm
+342 23127431 Huỳnh Hạo Nam Kỹ thuật phần mềm
+343 23127432 Lê Tất Nam Hệ thống thông tin
+344 23127435 Nguyễn Kim Ngân Hệ thống thông tin
+345 23127436 Phan Hoàng Quang Nghị Khoa học dữ liệu
+346 23127437 Trần Hữu Nghĩa Công nghệ tri thức
+347 23127438 Đặng Trường Nguyên Kỹ thuật phần mềm
+348 23127440 Lê Trọng Nguyên Thị giác máy tính
+349 23127442 Trầm Hữu Nhân Khoa học dữ liệu
+350 23127443 Trần Phạm Trọng Nhân Thị giác máy tính
+351 23127446 Phạm Chí Bảo Ninh Công nghệ thông tin
+352 23127447 Nguyễn Thanh Owen Khoa học dữ liệu
+353 23127448 Lưu Vĩnh Phát Mạng máy tính và Viễn thông (hướng ATTT)
+354 23127449 Nguyễn Tấn Phát Kỹ thuật phần mềm
+355 23127450 Trương Vủ Phát Mạng máy tính và Viễn thông (hướng ATTT)
+356 23127451 Nguyễn Đăng Phôn Hệ thống thông tin
+357 23127452 Lê Thanh Phong Công nghệ tri thức
+358 23127453 Vương Khải Phong Hệ thống thông tin
+359 23127454 Nguyễn Đình Duy Phú Công nghệ tri thức
+360 23127455 Trương Công Thiên Phú Kỹ thuật phần mềm
+361 23127456 Nguyễn Thiên Phúc Mạng máy tính và Viễn thông (hướng ATTT)
+362 23127457 Nguyễn Văn Bảo Phúc Mạng máy tính và Viễn thông (hướng ATTT)
+363 23127458 Thái Hoàng Phúc Khoa học máy tính (hướng TTNT)
+364 23127459 Huỳnh Vương Thụy Quân Hệ thống thông tin
+365 23127460 Lê Đình Minh Quân Thị giác máy tính
+366 23127461 Nguyễn Ngọc Minh Quân Công nghệ thông tin
+367 23127462 Nguyễn Minh Quang Hệ thống thông tin
+368 23127463 Nguyễn Vũ Minh Quang Mạng máy tính và Viễn thông (hướng ATTT)
+369 23127464 Trần Minh Quang Kỹ thuật phần mềm
+370 23127465 Nguyễn Hồ Anh Quốc Công nghệ tri thức
+371 23127466 Phan Như Quỳnh Khoa học dữ liệu
+7/9STT MSSV Họ SV Tên SV CHUYÊN NGÀNH
+372 23127467 Huỳnh Văn Sinh Hệ thống thông tin
+373 23127468 Bùi Quang Sơn Hệ thống thông tin
+374 23127469 Hồ Thái Sơn Công nghệ tri thức
+375 23127470 Ngô Tấn Tài Mạng máy tính và Viễn thông (hướng ATTT)
+376 23127471 Lê Văn Hoàng Tấn Mạng máy tính và Viễn thông (hướng ATTT)
+377 23127472 Phạm Ngọc Thái Kỹ thuật phần mềm
+378 23127473 Ngô Quang Thắng Công nghệ tri thức
+379 23127474 Võ Lê Hữu Thắng Hệ thống thông tin
+380 23127475 Ngô Hồng Thanh Kỹ thuật phần mềm
+381 23127478 Trần Ngọc Thành Hệ thống thông tin
+382 23127479 Thái Chí Thạnh Hệ thống thông tin
+383 23127481 Lê Quốc Thiện Khoa học máy tính (hướng TTNT)
+384 23127482 Trần Quốc Thiện Kỹ thuật phần mềm
+385 23127483 Dương Đức Thịnh Hệ thống thông tin
+386 23127484 Nguyễn Đặng Đức Thịnh Công nghệ thông tin
+387 23127485 Phạm Quang Thịnh Khoa học máy tính (hướng TTNT)
+388 23127486 Phan Quốc Thịnh Kỹ thuật phần mềm
+389 23127487 Thôi Đặng Trường Thọ Công nghệ thông tin
+390 23127488 Lê Thị Minh Thư Khoa học dữ liệu
+391 23127489 Nguyễn Ngọc Minh Thư Công nghệ tri thức
+392 23127490 Hồ Đức Thuận Hệ thống thông tin
+393 23127491 Nguyễn Minh Thuận Mạng máy tính và Viễn thông (hướng ATTT)
+394 23127492 Đỗ Thị Hoài Thương Hệ thống thông tin
+395 23127493 Võ Hoàng Thương Công nghệ thông tin
+396 23127494 Nguyễn Huỳnh Tiến Thị giác máy tính
+397 23127495 Nguyễn Minh Tiến Hệ thống thông tin
+398 23127498 Nguyễn Trọng Tín Hệ thống thông tin
+399 23127499 Lê Huy Toàn Kỹ thuật phần mềm
+400 23127500 Nguyễn Công Toàn Công nghệ tri thức
+401 23127502 Đỗ Nguyễn Minh Trí Kỹ thuật phần mềm
+402 23127503 Trần Thanh Trí Kỹ thuật phần mềm
+403 23127505 Võ Quốc Triệu Hệ thống thông tin
+404 23127506 Tạ Xuân Trường Hệ thống thông tin
+405 23127509 Lê Công Tuấn Công nghệ tri thức
+406 23127510 Phùng Ngọc Tuấn Kỹ thuật phần mềm
+407 23127511 Võ Minh Tuấn Hệ thống thông tin
+408 23127513 Nguyễn Xuân Tùng Hệ thống thông tin
+409 23127515 Nguyễn Tấn Văn Khoa học dữ liệu
+410 23127516 Bùi Nam Việt Khoa học dữ liệu
+411 23127517 Nguyễn Nam Việt Mạng máy tính và Viễn thông (hướng ATTT)
+412 23127519 Lê Thành Vinh Mạng máy tính và Viễn thông (hướng ATTT)
+413 23127520 Nguyễn Phan Thế Vinh Thị giác máy tính
+414 23127522 Ong Khánh Vinh Hệ thống thông tin
+415 23127523 Nguyễn Văn Vũ Công nghệ thông tin
+416 23127524 Hình Diễm Xuân Hệ thống thông tin
+417 23127525 Trần Như Ý Hệ thống thông tin
+418 23127526 Giao Thái Bảo Kỹ thuật phần mềm
+419 23127527 Trần Phụng Đình Công nghệ tri thức
+420 23127528 Tạ Văn Đức Công nghệ thông tin
+421 23127529 Phan Trung Hiếu Hệ thống thông tin
+422 23127530 Trương Quang Huy Khoa học máy tính (hướng TTNT)
+423 23127531 Chu Quốc Anh Minh Thị giác máy tính
+424 23127532 Vi Phương Nguyên Công nghệ thông tin
+425 23127533 Võ Thành Nhân Công nghệ thông tin
+8/9STT MSSV Họ SV Tên SV CHUYÊN NGÀNH
+426 23127534 Phạm Thanh Phong Hệ thống thông tin
+427 23127535 Cao Lê Gia Phú Mạng máy tính và Viễn thông (hướng ATTT)
+428 23127536 Nguyễn Tấn Phước Công nghệ tri thức
+429 23127537 Đỗ Hiếu Quang Mạng máy tính và Viễn thông (hướng ATTT)
+430 23127538 Nguyễn Đồng Thanh Khoa học dữ liệu
+431 23127539 Nguyễn Thanh Tiến Kỹ thuật phần mềm
+432 23127540 Phạm Đức Toàn Hệ thống thông tin
+433 23127541 Nguyễn Đức Trí Khoa học máy tính (hướng TTNT)
+434 23127542 Võ Nguyễn Thảo Uyên Công nghệ tri thức
+435 23127543 Vũ Văn Vũ Kỹ thuật phần mềm
+Danh sách có 435 sinh viên
+9/9

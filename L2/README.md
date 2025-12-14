@@ -43,7 +43,9 @@ The project goes beyond just calling available libraries, aiming for in-depth ob
 
 ### 1. Data Source
 - **Source:** [New York City Airbnb Open Data (Kaggle)](https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data)
-- **Size:** ~49,000 data rows.
+- **Author:** Dgomonov
+- **License:** CC0: Public Domain
+- **Size:** 48,895 data rows, 16 columns.
 
 ### 2. Feature Description
 - **Categorical:** `neighbourhood_group` (5 boroughs), `neighbourhood` (200+ areas), `room_type` (3 types).
@@ -51,6 +53,11 @@ The project goes beyond just calling available libraries, aiming for in-depth ob
 - **Target:** `price` (USD).
 
 ### 3. Data Characteristics & EDA
+**Original Data Types:**
+- **Numerical (int64):** `id`, `host_id`, `price`, `minimum_nights`, `number_of_reviews`, `calculated_host_listings_count`, `availability_365`
+- **Numerical (float64):** `latitude`, `longitude`, `reviews_per_month`
+- **Categorical (object):** `name`, `host_name`, `neighbourhood_group`, `neighbourhood`, `room_type`, `last_review`
+
 Below are some important charts from the data exploration process:
 
 #### a. Price Distribution
@@ -283,7 +290,7 @@ Based on model weights ($\beta$), we draw important insights:
 │   ├── 02_preprocessing.ipynb     # Pipeline: Cleaning, Encoding, Scaling
 │   └── 03_modeling.ipynb          # Modeling: Linear/Lasso from scratch, CV, Evaluation
 ├── src/
-│   ├── data_processing.py  # Data processing utility functions
+│   ├── data_processing.py  # Data processing utility functions - read & write CSV
 │   ├── models.py           # LinearRegression, Lasso, KFold class implementations
 │   └── visualization.py    # Plotting functions
 ├── README.md               # Project documentation

@@ -1,0 +1,341 @@
+STT MSSV Họ SV Tên SV Kết quả Ngành/ chuyên ngành đã xét Ghi chú
+1 23120012 Nguyễn Vĩnh Thành TGMT Thị giác máy tính
+2 23120013 Nghiêm Lê Duy Anh CNTTin Công nghệ thông tin
+3 23120017 Trần Thanh An KTPM Kỹ thuật phần mềm
+4 23120018 Nguyễn Ngọc Thiên Ân KTPM Kỹ thuật phần mềm
+5 23120019 Trương Bảo Thiên Ân KHMT Khoa học máy tính + Khoa học dữ liệu
+6 23120020 Ngô Bá Sỹ Nguyên MMT Mạng máy tính và viễn thông
+7 23120021 Hồ Hồ Gia Bảo KTPM Kỹ thuật phần mềm
+8 23120022 Hoàng Gia Bảo MMT Mạng máy tính và viễn thông
+9 23120024 Nguyễn Thanh Bình KTPM Kỹ thuật phần mềm
+10 23120025 Phan Thị Phương Chi KHMT Khoa học máy tính + Khoa học dữ liệu
+11 23120027 Nguyễn Hải Đăng MMT Mạng máy tính và viễn thông
+12 23120028 Nguyễn Hoàng Danh HTTT Hệ thống thông tin
+13 23120029 Cao Nguyễn Phúc Đạt CNTT Công nghệ tri thức + An toàn thông tin
+14 23120030 Trần Thanh Đạt KHMT Khoa học máy tính + Khoa học dữ liệu
+15 23120031 Nguyễn Phú Dinh KTPM Kỹ thuật phần mềm
+16 23120033 Huỳnh Võ Đại Dương HTTT Hệ thống thông tin
+17 23120034 Ứng Thị Thùy Dương KTPM Kỹ thuật phần mềm
+18 23120035 Phạm Ngọc Duy CNTTin Công nghệ thông tin
+19 23120037 Nguyễn Thanh Khánh Hà CNTTin Công nghệ thông tin
+20 23120038 Lê Hoàng Mỹ Hạ KHMT Khoa học máy tính + Khoa học dữ liệu
+21 23120040 Hồ Hữu Hoàng Hải KTPM Kỹ thuật phần mềm
+22 23120041 Lê Minh Hải KHMT Khoa học máy tính + Khoa học dữ liệu
+23 23120042 Huỳnh Đặng Ngọc Hân KHMT Khoa học máy tính + Khoa học dữ liệu
+24 23120044 Trần Trung Hiếu KTPM Kỹ thuật phần mềm
+25 23120045 Dương Khánh Khải Hưng KTPM Kỹ thuật phần mềm
+26 23120046 Hồ Thùy Hương KTPM Kỹ thuật phần mềm
+27 23120047 Nguyễn Gia Huy KHMT Khoa học máy tính + Khoa học dữ liệu
+28 23120048 Phan Hoàng Quốc Huy CNTT Công nghệ tri thức + An toàn thông tin
+29 23120049 Nguyễn Thanh Huyền MMT Mạng máy tính và viễn thông
+30 23120050 Nguyễn Nhật Khang KTPM Kỹ thuật phần mềm
+31 23120051 Nguyễn Duy Khánh KHMT Khoa học máy tính + Khoa học dữ liệu
+32 23120053 Huỳnh Công Khoa CNTT Công nghệ tri thức + An toàn thông tin
+33 23120055 Đào Trung Kiên HTTT Hệ thống thông tin
+34 23120056 Hà Quốc Kiên CNTTin Công nghệ thông tin
+35 23120057 Lê Tấn Lộc KTPM Kỹ thuật phần mềm
+36 23120058 Vũ Hoàng Long CNTTin Công nghệ thông tin
+37 23120059 Trần Đình Luân KTPM Kỹ thuật phần mềm
+38 23120060 Trần Kim Ngân CNTT Công nghệ tri thức + An toàn thông tin
+39 23120061 Nguyễn Thị Ánh Ngọc KTPM Kỹ thuật phần mềm
+40 23120062 Trần Kim Ngọc KHMT Khoa học máy tính + Khoa học dữ liệu
+41 23120063 Nguyễn Thành Nguyên KHMT Khoa học máy tính + Khoa học dữ liệu
+42 23120064 Nguyễn Thiện Nhân CNTTin Công nghệ thông tin
+43 23120065 Nguyễn Trọng Nhân KTPM Kỹ thuật phần mềm
+44 23120066 Võ Thiện Nhân KTPM Kỹ thuật phần mềm
+45 23120067 Lê Minh Nhật KHMT Khoa học máy tính + Khoa học dữ liệu
+46 23120068 Lê Nguyễn Minh Nhật KTPM Kỹ thuật phần mềm
+Trường Đại học Khoa học tự nhiên
+Khoa Công nghệ thông tin
+---oOo---
+KẾT QUẢ XÉT PHÂN CHUYÊN NGÀNH KHÓA 2023
+(Tháng 08/2025)STT MSSV Họ SV Tên SV Kết quả Ngành/ chuyên ngành đã xét Ghi chú
+47 23120069 Nguyễn Trần Quỳnh Như KTPM Kỹ thuật phần mềm
+48 23120070 Nguyễn Văn Phát 0 Không đạt điều kiện xét Tổng tín chỉ tích lũy<50
+49 23120071 Nguyễn Tuấn Phong KHMT Khoa học máy tính + Khoa học dữ liệu
+50 23120072 Triệu Tấn Phú CNTT Công nghệ tri thức + An toàn thông tin
+51 23120073 Nguyễn Nam Phước MMT Mạng máy tính và viễn thông
+52 23120074 Nguyễn Văn Phước MMT Mạng máy tính và viễn thông
+53 23120078 Đặng Mai Quốc KTPM Kỹ thuật phần mềm
+54 23120079 Phạm Thúy Quy HTTT Hệ thống thông tin
+55 23120080 Nguyễn Ngọc Như Quỳnh HTTT Hệ thống thông tin
+56 23120081 Nguyễn Trí Sang CNTT Công nghệ tri thức + An toàn thông tin
+57 23120084 Nguyễn Mạnh Thắng KHMT Khoa học máy tính + Khoa học dữ liệu
+58 23120087 Phạm Ngọc Thanh HTTT Hệ thống thông tin
+59 23120088 Cao Tiến Thành KHMT Khoa học máy tính + Khoa học dữ liệu
+60 23120089 Đỗ Quốc Thịnh CNTT Công nghệ tri thức + An toàn thông tin
+61 23120090 Nguyễn Gia Thịnh KTPM Kỹ thuật phần mềm
+62 23120091 Trần Thanh Thông MMT Mạng máy tính và viễn thông
+63 23120093 Vũ Duy Thụ CNTT Công nghệ tri thức + An toàn thông tin
+64 23120094 Hà Công Thuận MMT Mạng máy tính và viễn thông
+65 23120095 Lưu Đức Toàn CNTT Công nghệ tri thức + An toàn thông tin
+66 23120096 Nguyễn Viết Toàn KTPM Kỹ thuật phần mềm
+67 23120097 Võ Tất Toàn KTPM Kỹ thuật phần mềm
+68 23120099 Lê Xuân Trí KHMT Khoa học máy tính + Khoa học dữ liệu
+69 23120100 Trần Minh Trọng KHMT Khoa học máy tính + Khoa học dữ liệu
+70 23120101 Nguyễn Minh Tú KTPM Kỹ thuật phần mềm
+71 23120102 Nguyễn Ngọc Minh Tuấn CNTTin Công nghệ thông tin
+72 23120105 Huỳnh Mạnh Tường KTPM Kỹ thuật phần mềm
+73 23120106 Hàn Vũ Phương Uyên KHMT Khoa học máy tính + Khoa học dữ liệu
+74 23120107 Nguyễn Phạm Trí Viễn CNTT Công nghệ tri thức + An toàn thông tin
+75 23120109 Lê Đức An TGMT Thị giác máy tính
+76 23120111 Phạm Quốc Nam Anh KTPM Kỹ thuật phần mềm
+77 23120112 Thái Khắc Anh Tuấn KHMT Khoa học máy tính + Khoa học dữ liệu
+78 23120116 Nguyễn Việt Cường HTTT Hệ thống thông tin
+79 23120117 Võ Hoàng Danh HTTT Hệ thống thông tin
+80 23120118 Đàm Tiến Đạt KHMT Khoa học máy tính + Khoa học dữ liệu
+81 23120119 Đỗ Tiến Đạt KHMT Khoa học máy tính + Khoa học dữ liệu
+82 23120121 Nguyễn Xuân Duy CNTT Công nghệ tri thức + An toàn thông tin
+83 23120122 Nguyễn Lê Ngọc Hân HTTT Hệ thống thông tin
+84 23120123 Trần Gia Hiển CNTT Công nghệ tri thức + An toàn thông tin
+85 23120124 Nguyễn Minh Hiếu KTPM Kỹ thuật phần mềm
+86 23120127 Dương Trọng Hòa KTPM Kỹ thuật phần mềm
+87 23120129 Nguyễn Lê Gia Hòa MMT Mạng máy tính và viễn thông
+88 23120131 Phạm Bảo Huy KTPM Kỹ thuật phần mềm
+89 23120132 Cao Trọng Khang KTPM Kỹ thuật phần mềm
+90 23120134 Nguyễn Đăng Khoa CNTT Công nghệ tri thức + An toàn thông tin
+91 23120135 Trần Anh Khoa KTPM Kỹ thuật phần mềm
+92 23120136 Phạm Nguyễn Thế Khôi HTTT Hệ thống thông tin
+93 23120137 Triệu Tuấn Kiệt KHMT Khoa học máy tính + Khoa học dữ liệu
+94 23120138 Nguyễn Quốc Kỳ KTPM Kỹ thuật phần mềm
+95 23120139 Nguyễn Hồ Lễ HTTT Hệ thống thông tin
+96 23120140 Phan Thị Thùy Linh MMT Mạng máy tính và viễn thông
+97 23120141 Lê Văn Lộc HTTT Hệ thống thông tinSTT MSSV Họ SV Tên SV Kết quả Ngành/ chuyên ngành đã xét Ghi chú
+98 23120143 Tô Thành Long KTPM Kỹ thuật phần mềm
+99 23120146 Hoàng Ngọc KHMT Khoa học máy tính + Khoa học dữ liệu
+100 23120148 Trần Trúc Ngọc CNTT Công nghệ tri thức + An toàn thông tin
+101 23120149 Nguyễn Hưng Nguyên KTPM Kỹ thuật phần mềm
+102 23120151 Huỳnh Yến Nhi KHMT Khoa học máy tính + Khoa học dữ liệu
+103 23120152 Hồ Khổng Tuyết Như HTTT Hệ thống thông tin
+104 23120153 Cù Văn Nhựt CNTT Công nghệ tri thức + An toàn thông tin
+105 23120154 Nguyễn Thanh Phong KTPM Kỹ thuật phần mềm
+106 23120157 Nguyễn Hữu Phúc KTPM Kỹ thuật phần mềm
+107 23120158 Tống Thanh Phúc KHMT Khoa học máy tính + Khoa học dữ liệu
+108 23120159 Nguyễn Hoàng Minh Quân CNTT Công nghệ tri thức + An toàn thông tin
+109 23120160 Nguyễn Minh Quân HTTT Hệ thống thông tin
+110 23120162 Lê Hải Sơn HTTT Hệ thống thông tin
+111 23120163 Lê Nhật Minh Tâm KHMT Khoa học máy tính + Khoa học dữ liệu
+112 23120165 Lê Đức Thành KHMT Khoa học máy tính + Khoa học dữ liệu
+113 23120166 Trần Hữu Kim Thành KHMT Khoa học máy tính + Khoa học dữ liệu
+114 23120168 Trần Quốc Thịnh MMT Mạng máy tính và viễn thông
+115 23120169 Nguyễn Phú Thọ CNTT Công nghệ tri thức + An toàn thông tin
+116 23120170 Nguyễn Đoàn Xuân Thu KTPM Kỹ thuật phần mềm
+117 23120171 Đặng Ngọc Tiên KTPM Kỹ thuật phần mềm
+118 23120172 Trần Thị Thủy Tiên HTTT Hệ thống thông tin
+119 23120175 Huỳnh Thái Toàn KTPM Kỹ thuật phần mềm
+120 23120176 Nguyễn Phúc Toàn HTTT Hệ thống thông tin
+121 23120177 Phạm Hương Trà KHMT Khoa học máy tính + Khoa học dữ liệu
+122 23120179 Nguyễn Hoàng Minh Trí KHMT Khoa học máy tính + Khoa học dữ liệu
+123 23120180 Trần Lê Trung Trực HTTT Hệ thống thông tin
+124 23120182 Nguyễn Duy Trường CNTT Công nghệ tri thức + An toàn thông tin
+125 23120183 Nguyễn Hoàng Anh Tú KTPM Kỹ thuật phần mềm
+126 23120184 Nguyễn Anh Tuấn CNTTin Công nghệ thông tin
+127 23120185 Nguyễn Hồ Anh Tuấn KHMT Khoa học máy tính + Khoa học dữ liệu
+128 23120186 Phạm Như Thái Tuấn CNTT Công nghệ tri thức + An toàn thông tin
+129 23120187 Phan Anh Tuấn HTTT Hệ thống thông tin
+130 23120188 Nguyễn Bách Kha Vân HTTT Hệ thống thông tin
+131 23120189 Hoàng Quốc Việt HTTT Hệ thống thông tin
+132 23120190 Nguyễn Lê Thế Vinh KTPM Kỹ thuật phần mềm
+133 23120192 Nguyễn Nhật Vy HTTT Hệ thống thông tin
+134 23120193 Trần Kim Yến HTTT Hệ thống thông tin
+135 23120194 Võ Cao Tâm Chính CNTT Công nghệ tri thức + An toàn thông tin
+136 23120195 Lê Hà Thanh Chương KHMT Khoa học máy tính + Khoa học dữ liệu
+137 23120197 Trà Văn Sỹ KTPM Kỹ thuật phần mềm
+138 23120198 Nguyễn Nhựt Thanh HTTT Hệ thống thông tin
+139 23120199 Huỳnh Đức Thịnh KTPM Kỹ thuật phần mềm
+140 23120200 Nguyễn Hưng Thịnh KTPM Kỹ thuật phần mềm
+141 23120201 Nguyễn Thị Trúc Hằng HTTT Hệ thống thông tin
+142 23120202 Phạm Quang Vinh KTPM Kỹ thuật phần mềm
+143 23120204 Lày Khánh An TGMT Thị giác máy tính
+144 23120205 Ngô Gia An CNTTin Công nghệ thông tin
+145 23120206 Ngô Thuận An HTTT Hệ thống thông tin
+146 23120207 Nguyễn Bảo An KTPM Kỹ thuật phần mềm
+147 23120208 Dương Tuấn Anh CNTT Công nghệ tri thức + An toàn thông tin
+148 23120209 Lê Hoàng Nhật Anh HTTT Hệ thống thông tinSTT MSSV Họ SV Tên SV Kết quả Ngành/ chuyên ngành đã xét Ghi chú
+149 23120210 Nguyễn Hoàng Thế Anh CNTTin Công nghệ thông tin
+150 23120211 Phạm Hoàng Tuấn Anh CNTTin Công nghệ thông tin
+151 23120212 Võ Nhật Anh CNTT Công nghệ tri thức + An toàn thông tin
+152 23120213 Võ Việt Anh CNTT Công nghệ tri thức + An toàn thông tin
+153 23120215 Ngô Đa Báu MMT Mạng máy tính và viễn thông
+154 23120216 Cao Thanh Bình HTTT Hệ thống thông tin
+155 23120217 Đinh Quốc Bình TGMT Thị giác máy tính
+156 23120218 Nguyễn Ngọc Bình HTTT Hệ thống thông tin
+157 23120219 Nguyễn Văn Chiến HTTT Hệ thống thông tin
+158 23120220 Trần Vũ Đình Chính CNTT Công nghệ tri thức + An toàn thông tin
+159 23120221 Nguyễn Đình Chuẩn CNTTin Công nghệ thông tin
+160 23120222 Lê Thành Công KTPM Kỹ thuật phần mềm
+161 23120223 Dương Nhật Cường HTTT Hệ thống thông tin
+162 23120224 Nguyễn Tuấn Cường HTTT Hệ thống thông tin
+163 23120225 Trần Gia Cường KTPM Kỹ thuật phần mềm
+164 23120226 Nguyễn Ngọc Đại KTPM Kỹ thuật phần mềm
+165 23120227 Đặng Nguyễn Thái Đạt TGMT Thị giác máy tính
+166 23120228 Lê Trung Thành Đạt KTPM Kỹ thuật phần mềm
+167 23120229 Nguyễn Hà Đạt KTPM Kỹ thuật phần mềm
+168 23120230 Nguyễn Thế Đạt CNTT Công nghệ tri thức + An toàn thông tin
+169 23120231 Trương Nhật Đạt KTPM Kỹ thuật phần mềm
+170 23120232 Lê Thượng Đế KHMT Khoa học máy tính + Khoa học dữ liệu
+171 23120233 Nguyễn Lê Hữu Điền CNTTin Công nghệ thông tin
+172 23120234 Trần Khánh Dư 0 Không đạt điều kiện xét Tổng tín chỉ tích lũy<50
+173 23120235 Đặng Nguyên Đức MMT Mạng máy tính và viễn thông
+174 23120236 Lê Anh Đức TGMT Thị giác máy tính
+175 23120237 Lê Lâm Trí Đức HTTT Hệ thống thông tin
+176 23120238 Lưu Tài Đức HTTT Hệ thống thông tin
+177 23120239 Nguyễn Huỳnh Trọng Đức CNTT Công nghệ tri thức + An toàn thông tin
+178 23120241 Dương Viết Dũng HTTT Hệ thống thông tin
+179 23120242 Nguyễn Văn Bình Dương KTPM Kỹ thuật phần mềm
+180 23120243 Trần Nhật Dương KHMT Khoa học máy tính + Khoa học dữ liệu
+181 23120244 Nguyễn Nhật Duy KTPM Kỹ thuật phần mềm
+182 23120245 Nguyễn Quang Duy KHMT Khoa học máy tính + Khoa học dữ liệu
+183 23120246 Nguyễn Quốc Duy TGMT Thị giác máy tính
+184 23120247 Phan Thanh Giang CNTTin Công nghệ thông tin
+185 23120248 Nguyễn Mạnh Hà KHMT Khoa học máy tính + Khoa học dữ liệu
+186 23120249 Huỳnh Ngọc Hải TGMT Thị giác máy tính
+187 23120250 Nguyễn Hoàng Hải MMT Mạng máy tính và viễn thông
+188 23120251 Đào Duy Hảo HTTT Hệ thống thông tin
+189 23120252 Nguyễn Phúc Hậu KTPM Kỹ thuật phần mềm
+190 23120253 Nguyễn Mạnh Hiền MMT Mạng máy tính và viễn thông
+191 23120255 Lê Tấn Hiệp KTPM Kỹ thuật phần mềm
+192 23120256 Trần Đại Hiệp KTPM Kỹ thuật phần mềm
+193 23120257 Bùi Trung Hiếu KHMT Khoa học máy tính + Khoa học dữ liệu
+194 23120258 Lưu Trọng Hiếu KHMT Khoa học máy tính + Khoa học dữ liệu
+195 23120260 Văn Đình Hiếu CNTTin Công nghệ thông tin
+196 23120261 Văn Phú Hiệu HTTT Hệ thống thông tin
+197 23120262 Tống Dương Thái Hòa KTPM Kỹ thuật phần mềm
+198 23120263 Đặng Khải Hoàn CNTT Công nghệ tri thức + An toàn thông tin
+199 23120264 Nguyễn Phúc Hoàng KTPM Kỹ thuật phần mềmSTT MSSV Họ SV Tên SV Kết quả Ngành/ chuyên ngành đã xét Ghi chú
+200 23120265 Nguyễn Thái Hoàng HTTT Hệ thống thông tin
+201 23120266 Võ Trần Duy Hoàng CNTT Công nghệ tri thức + An toàn thông tin
+202 23120267 Nguyễn Hữu Huy Hùng CNTTin Công nghệ thông tin
+203 23120268 Vũ Quốc Hùng KTPM Kỹ thuật phần mềm
+204 23120269 Hà Huy Hưng 0 Không đạt điều kiện xét Tổng tín chỉ tích lũy<50
+205 23120270 Lê Quốc Hưng TGMT Thị giác máy tính
+206 23120271 Nguyễn Hữu Khánh Hưng KHMT Khoa học máy tính + Khoa học dữ liệu
+207 23120272 Lê Quốc Huy CNTTin Công nghệ thông tin
+208 23120273 Nguyễn Gia Huy CNTT Công nghệ tri thức + An toàn thông tin
+209 23120274 Trần Quốc Huy HTTT Hệ thống thông tin
+210 23120276 Võ Gia Huy CNTTin Công nghệ thông tin
+211 23120277 Võ Gia Huy CNTT Công nghệ tri thức + An toàn thông tin
+212 23120278 Lê Văn Huỳnh 0 Không đạt điều kiện xét Tổng tín chỉ tích lũy<50
+213 23120279 Nguyễn Lê Quang Kan KTPM Kỹ thuật phần mềm
+214 23120280 Trần Quang Khải HTTT Hệ thống thông tin
+215 23120281 Bùi Duy Khánh KTPM Kỹ thuật phần mềm
+216 23120282 Chung Gia Khánh CNTT Công nghệ tri thức + An toàn thông tin
+217 23120283 Phạm Quốc Khánh KHMT Khoa học máy tính + Khoa học dữ liệu
+218 23120284 Trương Sỹ Khánh CNTT Công nghệ tri thức + An toàn thông tin
+219 23120285 Huỳnh Đăng Khoa KTPM Kỹ thuật phần mềm
+220 23120286 Võ Đăng Khoa HTTT Hệ thống thông tin
+221 23120287 Lê Tuấn Kiệt CNTTin Công nghệ thông tin
+222 23120288 Nguyễn Lê Anh Kiệt CNTT Công nghệ tri thức + An toàn thông tin
+223 23120289 Nguyễn Nhật Lân KTPM Kỹ thuật phần mềm
+224 23120290 Nguyễn Hoàng Liêm HTTT Hệ thống thông tin
+225 23120291 Lê Quang Linh HTTT Hệ thống thông tin
+226 23120292 Nguyễn Quốc Lộc KTPM Kỹ thuật phần mềm
+227 23120294 Lê Chí Hoàng Long KTPM Kỹ thuật phần mềm
+228 23120295 Nguyễn Đức Mạnh HTTT Hệ thống thông tin
+229 23120298 Phạm Quang Minh HTTT Hệ thống thông tin
+230 23120299 Y Nguyên Mlô KHMT Khoa học máy tính + Khoa học dữ liệu
+231 23120300 Nguyễn Trà My HTTT Hệ thống thông tin
+232 23120301 Phạm Thành Nam KHMT Khoa học máy tính + Khoa học dữ liệu
+233 23120302 Mã Tuyết Ngân CNTT Công nghệ tri thức + An toàn thông tin
+234 23120303 Nguyễn Hồng Ngọc 0 Không đạt điều kiện xét Tổng tín chỉ tích lũy<50
+235 23120306 Đào Nguyễn Nguyên CNTT Công nghệ tri thức + An toàn thông tin
+236 23120307 Trần Nguyễn Nguyên CNTT Công nghệ tri thức + An toàn thông tin
+237 23120308 Trương Thái Nguyên CNTT Công nghệ tri thức + An toàn thông tin
+238 23120311 Nguyễn Khả Như HTTT Hệ thống thông tin
+239 23120312 Thạch Như KTPM Kỹ thuật phần mềm
+240 23120313 Trần Nguyễn Thị Ngọc Như TGMT Thị giác máy tính
+241 23120314 Phạm An Ninh KTPM Kỹ thuật phần mềm
+242 23120315 Nguyễn Đăng Pha KHMT Khoa học máy tính + Khoa học dữ liệu
+243 23120316 Bạch Trương Tấn Phát KHMT Khoa học máy tính + Khoa học dữ liệu
+244 23120317 Nguyễn Đức Phát KTPM Kỹ thuật phần mềm
+245 23120318 Trương Quang Phát KHMT Khoa học máy tính + Khoa học dữ liệu
+246 23120319 Trương Thành Phát KTPM Kỹ thuật phần mềm
+247 23120320 Nguyễn Hoàng Phi CNTTin Công nghệ thông tin
+248 23120321 Lâm Nhật Phong KTPM Kỹ thuật phần mềm
+249 23120322 Lê Thanh Phong KTPM Kỹ thuật phần mềm
+250 23120325 Lê Mạnh Phú CNTTin Công nghệ thông tinSTT MSSV Họ SV Tên SV Kết quả Ngành/ chuyên ngành đã xét Ghi chú
+251 23120326 Mai Trọng Phú CNTTin Công nghệ thông tin
+252 23120327 Thái Thiên Phú KTPM Kỹ thuật phần mềm
+253 23120328 Bửu Huỳnh Vĩnh Phúc KTPM Kỹ thuật phần mềm
+254 23120329 Châu Huỳnh Phúc KHMT Khoa học máy tính + Khoa học dữ liệu
+255 23120330 Lê Công Phúc KTPM Kỹ thuật phần mềm
+256 23120331 Nguyễn Hồng Phúc HTTT Hệ thống thông tin
+257 23120332 Nguyễn Trọng Phúc CNTT Công nghệ tri thức + An toàn thông tin
+258 23120333 Vũ Trần Phúc KHMT Khoa học máy tính + Khoa học dữ liệu
+259 23120334 Huỳnh Tấn Phước KHMT Khoa học máy tính + Khoa học dữ liệu
+260 23120336 Nguyễn Thanh Phương HTTT Hệ thống thông tin
+261 23120337 Bùi Minh Quân KTPM Kỹ thuật phần mềm
+262 23120338 Hoàng Hùng Quân KHMT Khoa học máy tính + Khoa học dữ liệu
+263 23120339 Nguyễn Minh Quân CNTTin Công nghệ thông tin
+264 23120340 Phạm Minh Quân CNTT Công nghệ tri thức + An toàn thông tin
+265 23120341 Phạm Vương Quân KTPM Kỹ thuật phần mềm
+266 23120342 Trần Nguyễn Minh Quân KHMT Khoa học máy tính + Khoa học dữ liệu
+267 23120343 Trần Trọng Quân KTPM Kỹ thuật phần mềm
+268 23120344 Đặng Dương Thanh Quang HTTT Hệ thống thông tin
+269 23120345 Nguyễn Trịnh Quang CNTT Công nghệ tri thức + An toàn thông tin
+270 23120346 Trần Vũ Quang KTPM Kỹ thuật phần mềm
+271 23120347 Nguyễn Kim Quốc KHMT Khoa học máy tính + Khoa học dữ liệu
+272 23120348 Ngô Thị Thục Quyên KHMT Khoa học máy tính + Khoa học dữ liệu
+273 23120350 Hoàng Văn Sang CNTTin Công nghệ thông tin
+274 23120352 Lê Nguyễn Quốc Thái CNTT Công nghệ tri thức + An toàn thông tin
+275 23120353 Trà Nguyễn Quang Thắng KTPM Kỹ thuật phần mềm
+276 23120354 Trịnh Hồ Minh Thắng KTPM Kỹ thuật phần mềm
+277 23120355 Võ Hữu Thắng KTPM Kỹ thuật phần mềm
+278 23120356 Trần Nguyễn Trí Thanh CNTT Công nghệ tri thức + An toàn thông tin
+279 23120357 Lê Nhật Thành MMT Mạng máy tính và viễn thông
+280 23120358 Nguyễn Tiến Thành CNTTin Công nghệ thông tin
+281 23120359 Trần Đình Thi KHMT Khoa học máy tính + Khoa học dữ liệu
+282 23120360 Đặng Lê Đức Thịnh CNTT Công nghệ tri thức + An toàn thông tin
+283 23120361 Đào Đức Thịnh HTTT Hệ thống thông tin
+284 23120362 Nguyễn Trần Ngọc Thịnh TGMT Thị giác máy tính
+285 23120363 Đào Ngọc Thọ MMT Mạng máy tính và viễn thông
+286 23120364 Phạm Minh Thông CNTT Công nghệ tri thức + An toàn thông tin
+287 23120365 Nguyễn Hoàng Anh Thư KHMT Khoa học máy tính + Khoa học dữ liệu
+288 23120366 Trương Thanh Thuận CNTT Công nghệ tri thức + An toàn thông tin
+289 23120367 Trần Ngọc Diễm Thúy KTPM Kỹ thuật phần mềm
+290 23120368 Nguyễn Đức Tiến KHMT Khoa học máy tính + Khoa học dữ liệu
+291 23120369 Nguyễn Lê Tân Tiến CNTT Công nghệ tri thức + An toàn thông tin
+292 23120370 Võ Ngọc Tiến KHMT Khoa học máy tính + Khoa học dữ liệu
+293 23120371 Lê Trung Tín CNTT Công nghệ tri thức + An toàn thông tin
+294 23120372 Phan Trung Tín KTPM Kỹ thuật phần mềm
+295 23120373 Kiều Đỗ Song Tinh HTTT Hệ thống thông tin
+296 23120374 Văn Công Tính HTTT Hệ thống thông tin
+297 23120375 Lê Đức Toàn CNTT Công nghệ tri thức + An toàn thông tin
+298 23120377 Mai Đình Trí KHMT Khoa học máy tính + Khoa học dữ liệu
+299 23120378 Nguyễn An Trí CNTT Công nghệ tri thức + An toàn thông tin
+300 23120380 Huỳnh Lê Minh Triết KTPM Kỹ thuật phần mềm
+301 23120381 Lê Thiện Trọng CNTTin Công nghệ thông tinSTT MSSV Họ SV Tên SV Kết quả Ngành/ chuyên ngành đã xét Ghi chú
+302 23120382 Nguyễn Ngọc Nhân Trọng CNTTin Công nghệ thông tin
+303 23120383 Trần Đức Trọng CNTTin Công nghệ thông tin
+304 23120384 Lê Thành Trung TGMT Thị giác máy tính
+305 23120385 Bùi Nhật Trường 0 Không đạt điều kiện xét Tổng tín chỉ tích lũy<50
+306 23120386 Phan Khắc Trường KHMT Khoa học máy tính + Khoa học dữ liệu
+307 23120387 Nguyễn Duy Tú CNTT Công nghệ tri thức + An toàn thông tin
+308 23120388 Phạm Lê Thanh Tú HTTT Hệ thống thông tin
+309 23120389 Nguyễn Ngọc Tuân MMT Mạng máy tính và viễn thông
+310 23120390 Cao Quốc Tuấn KHMT Khoa học máy tính + Khoa học dữ liệu
+311 23120391 Đào Bùi Anh Tuấn CNTT Công nghệ tri thức + An toàn thông tin
+312 23120392 Đào Quốc Tuấn CNTT Công nghệ tri thức + An toàn thông tin
+313 23120393 Lục Hoàng Tuấn KTPM Kỹ thuật phần mềm
+314 23120394 Nguyễn Anh Tuấn KTPM Kỹ thuật phần mềm
+315 23120395 Phạm Gia Tuấn CNTT Công nghệ tri thức + An toàn thông tin
+316 23120396 Phạm Quang Tuấn KTPM Kỹ thuật phần mềm
+317 23120397 Văn Đức Tuấn CNTTin Công nghệ thông tin
+318 23120398 Võ Thành Minh Tuệ KTPM Kỹ thuật phần mềm
+319 23120399 Nguyễn Sơn Tùng CNTTin Công nghệ thông tin
+320 23120400 Cao Quốc Tý HTTT Hệ thống thông tin
+321 23120402 Cao Thị Tú Vi HTTT Hệ thống thông tin
+322 23120403 Huỳnh Trọng Viên KHMT Khoa học máy tính + Khoa học dữ liệu
+323 23120404 Lê Hoàng Việt CNTT Công nghệ tri thức + An toàn thông tin
+324 23120405 Đỗ Phước Vinh HTTT Hệ thống thông tin
+325 23120406 Phan Công Vinh MMT Mạng máy tính và viễn thông
+326 23120408 Phạm Thanh Vương CNTT Công nghệ tri thức + An toàn thông tin
+327 23120409 Nguyễn Khắc Vượng KTPM Kỹ thuật phần mềm
+328 23120410 Trần Quốc Vỹ KTPM Kỹ thuật phần mềm
+329 23120411 Thạch Ý HTTT Hệ thống thông tin
+330 23120412 Nguyễn Thị Hoàng Yến 0 Không đạt điều kiện xét Tổng tín chỉ tích lũy<50
+331 23120413 Đỗ Anh Khoa HTTT Hệ thống thông tin
+332 23120414 Phạm Văn Mạnh CNTT Công nghệ tri thức + An toàn thông tin
+333 23120415 Lăng Phú Quý KHMT Khoa học máy tính + Khoa học dữ liệu
+334 23120417 Dương Trần Anh Tú HTTT Hệ thống thông tin
+Tổng số SV: 334
