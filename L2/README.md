@@ -23,7 +23,7 @@ This project analyzes and predicts Airbnb rental prices in New York City in 2019
 The project focuses on building a Machine Learning model to predict the **listing price** of Airbnb apartments/rooms in New York City in 2019.
 - **Input:** Apartment features such as location (borough, neighborhood), room type (entire home, private room), minimum nights, number of reviews, etc.
 - **Output:** Rental price (continuous variable).
-- **Problem Type:** Supervised Learning - Regression (Linear Regression).
+- **Problem Type:** Supervised Learning - Regression (Linear Regression, Lasso Regression, CART).
 
 ### 2. Motivation & Practical Application
 Dynamic Pricing is a major challenge in the sharing economy:
@@ -33,9 +33,9 @@ Dynamic Pricing is a major challenge in the sharing economy:
 
 ### 3. Specific Goals
 The project goes beyond just calling available libraries, aiming for in-depth objectives:
-- **Technical:** Implement **Linear Regression** and **Lasso Regression** algorithms from scratch using only **NumPy**. This helps in mastering the mathematical nature (Matrix Calculus, Gradient Descent, Coordinate Descent).
+- **Technical:** Implement **Linear Regression**, **Lasso Regression**, and **CART (Classification and Regression Tree)** algorithms from scratch using only **NumPy**. This helps in mastering the mathematical nature (Matrix Calculus, Gradient Descent, Coordinate Descent, Decision Tree Splitting).
 - **Data:** Build a complete Data Pipeline from cleaning, noise handling, to advanced Feature Engineering like Target Encoding.
-- **Results:** Build a model with acceptable accuracy (R² > 0.5) and more importantly, **interpretability** - identifying which factors most strongly affect room prices in NYC.
+- **Results:** Build a model with acceptable accuracy (R² > 0.5) and more importantly, **interpretability** - identifying which factors most strongly affect room prices in NYC. Compare linear and non-linear models to understand data relationships.
 
 ---
 
@@ -78,7 +78,7 @@ Some areas in Manhattan are strongly dominated by "Top Hosts" (those managing mu
 
 #### e. Correlation Matrix
 The heatmap shows the correlation between variables. Variables have little strong linear correlation with each other, except for `number_of_reviews` and `reviews_per_month`.
-![Correlation Matrix](https://github.com/user-attachments/assets/4ee7229f-84cb-40af-9e73-83ded285fcad)
+![Correlation Matrix](https://github.com/user-attachments/assets/744c2c0e-2822-4b0c-8ab7-7979018e2957)
 
 #### f. Price Density by Neighbourhood
 The Violin plot shows that the price distribution density in Manhattan is wider and has a longer tail (many high-priced listings) compared to other boroughs like Queens or Bronx.
@@ -124,7 +124,7 @@ The process is performed sequentially to ensure clean and informative data for t
 
 ### 2. Algorithms & Implementation
 
-The project implements `LinearRegression` and `Lasso` classes inheriting a structure similar to Scikit-learn (`fit`, `predict`).
+The project implements `LinearRegression`, `Lasso`, and `CART` classes inheriting a structure similar to Scikit-learn (`fit`, `predict`).
 
 #### a. Linear Regression
 **Goal:** Find the weight vector $\beta$ such that the Residual Sum of Squares (RSS) is minimized:
@@ -161,6 +161,31 @@ Where:
 - Pre-compute constant values to speed up the loop.
 - Use vectorization to calculate predictions $\hat{y}$ and residuals $r = y - \hat{y}$.
 - Update weights iteratively until convergence (error change is smaller than threshold `tol`).
+
+#### c. CART (Classification and Regression Tree)
+**Goal:** Build a decision tree that recursively splits the feature space to minimize prediction error at leaf nodes.
+
+**How CART Works:**
+1. **Start:** Begin with all training data at the root node
+2. **Split:** For each node, find the best feature and threshold to split the data that minimizes Mean Squared Error (MSE)
+3. **Recurse:** Apply the splitting process recursively to left and right subsets
+4. **Stop:** Terminate when reaching `max_depth` or when nodes have fewer than `min_samples_split` samples
+5. **Predict:** Leaf nodes return the mean value of all samples in that node
+
+**Splitting Criterion (MSE):**
+At each node, we evaluate all possible splits and choose the one that minimizes the weighted average MSE:
+$$ MSE_{split} = \frac{n_{left}}{n} \times MSE_{left} + \frac{n_{right}}{n} \times MSE_{right} $$
+
+**Key Hyperparameters:**
+- `max_depth`: Maximum depth of the tree (controls model complexity)
+- `min_samples_split`: Minimum number of samples required to split an internal node
+- `min_samples_leaf`: Minimum number of samples required to be at a leaf node
+
+**Implementation with NumPy:**
+- Recursive tree building using dictionaries to store node information
+- Vectorized operations for finding best splits across all features
+- Efficient MSE calculation using NumPy's built-in functions
+- Tree traversal during prediction to navigate from root to appropriate leaf node
 
 ### 3. Evaluation Metrics
 
@@ -230,6 +255,8 @@ pip install -r requirements.txt
 ### 1. Achieved Metrics
 Evaluation results on the Test set (20% of data) after parameter optimization:
 
+**Best Model: Linear Regression**
+
 | Metric | Train Set | Test Set | Cross-Validation (Mean) | Meaning |
 |--------|-----------|----------|-------------------------|---------|
 | **R² Score** | **0.554** | **0.546** | 0.553 (±0.011) | The model explains ~54.6% of the price variance. |
@@ -237,6 +264,14 @@ Evaluation results on the Test set (20% of data) after parameter optimization:
 | **MAE** | 0.335 | 0.334 | 0.335 (±0.005) | Mean Absolute Error. |
 
 > **Comment:** The R² difference between Train and Test sets is very small (0.008), indicating the model is **not Overfitting** and generalizes well.
+
+**Model Comparison (Cross-Validation Results):**
+
+| Model | CV Mean R² | CV Mean RMSE | CV Mean MAE | Notes |
+|-------|------------|--------------|-------------|-------|
+| **Linear Regression** | **0.553** | 0.462 | 0.335 | Best overall performance, simple and interpretable |
+| Lasso (α=0.001) | 0.553 | 0.462 | 0.335 | Similar to Linear Regression, good for feature selection |
+| CART (depth=10) | 0.521 | 0.478 | 0.342 | Captures non-linear patterns but slightly lower accuracy |
 
 ### 2. Visualizations
 
@@ -271,11 +306,28 @@ Based on model weights ($\beta$), we draw important insights:
 3.  **Availability:**
     - `availability_365` has a positive coefficient (+0.342), suggesting that professional listings (available year-round) often have higher prices than short-term/seasonal listings.
 
-#### Linear Regression vs Lasso Comparison
-- **Performance:** Both models yield similar results (R² ~ 0.55).
-- **Selection:**
-    - **Linear Regression** was chosen as the final model due to its simplicity and effectiveness without needing complex $\alpha$ parameter tuning.
-    - **Lasso** is useful for identifying redundant features (driving coefficients to 0), but in this dataset, most selected features have statistical significance.
+#### Model Comparison and Analysis
+
+**Linear Regression vs Lasso:**
+- **Performance:** Both models yield nearly identical results (R² ~ 0.553).
+- **Feature Selection:** Lasso with low alpha (0.001) retains most features, confirming that the engineered features are meaningful.
+- **Choice:** **Linear Regression** was chosen as the final model due to its simplicity and effectiveness without needing $\alpha$ parameter tuning.
+
+**Linear Models vs CART:**
+- **Linear Models (R² ~ 0.553):**
+  - Assume linear relationships between features and target
+  - Highly interpretable with clear coefficient meanings
+  - More stable and generalize well
+  - Better performance on this dataset
+  
+- **CART (R² ~ 0.521):**
+  - Can capture non-linear relationships and interactions
+  - No assumptions about data distribution
+  - Creates interpretable decision rules
+  - Slightly lower performance suggests the relationship is mostly linear
+  - Prone to overfitting without proper constraints (max_depth, min_samples)
+  
+**Key Insight:** The better performance of linear models indicates that Airbnb prices in NYC have predominantly **linear relationships** with features like location, room type, and availability. The extensive feature engineering (one-hot encoding, target encoding, distance calculations) successfully captured the important patterns, making complex non-linear models unnecessary.
 
 ---
 
@@ -288,11 +340,11 @@ Based on model weights ($\beta$), we draw important insights:
 ├── notebooks/
 │   ├── 01_data_exploration.ipynb  # EDA: Distribution analysis, maps, correlations
 │   ├── 02_preprocessing.ipynb     # Pipeline: Cleaning, Encoding, Scaling
-│   └── 03_modeling.ipynb          # Modeling: Linear/Lasso from scratch, CV, Evaluation
+│   └── 03_modeling.ipynb          # Modeling: Linear/Lasso/CART from scratch, CV, Evaluation
 ├── src/
 │   ├── data_processing.py  # Data processing utility functions - read & write CSV
-│   ├── models.py           # LinearRegression, Lasso, KFold class implementations
-│   └── visualization.py    # Plotting functions
+│   ├── models.py           # LinearRegression, Lasso, CART, KFold, and metrics implementations
+│   └── visualization.py    # Plotting functions for EDA and model evaluation
 ├── README.md               # Project documentation
 └── requirements.txt        # Dependency list
 ```
@@ -321,8 +373,9 @@ Based on model weights ($\beta$), we draw important insights:
 ## Future Improvements
 
 1.  **Model Expansion:**
-    - Experiment with Non-linear models like **Decision Tree**, **Random Forest**, or **Gradient Boosting** (implemented from scratch) to capture complex relationships that linear models miss.
-    - Implement **Ridge Regression** (L2 Regularization) and **Elastic Net** (combining L1 & L2).
+    - **Implemented:** CART (Decision Tree) from scratch - completed and compared with linear models.
+    - Implement ensemble methods like **Random Forest** or **Gradient Boosting** (from scratch) to improve prediction accuracy through combining multiple trees.
+    - Implement **Ridge Regression** (L2 Regularization) and **Elastic Net** (combining L1 & L2) for additional regularization techniques.
 
 2.  **Data Improvement:**
     - Integrate External Data such as: distance to nearest subway station, safety index, or distance to other famous tourist spots besides Times Square.

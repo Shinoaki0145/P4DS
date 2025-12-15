@@ -150,6 +150,227 @@ class Lasso:
         return X @ self.coef_ + self.intercept_
 
 
+# CART (Classification and Regression Tree)
+class CART:
+    def __init__(self, max_depth=5, min_samples_split=10, min_samples_leaf=5):
+        """
+        CART (Classification and Regression Tree) for Regression
+        
+        Parameters:
+        -----------
+        max_depth : int, default=5
+            Maximum depth of the tree
+        min_samples_split : int, default=10
+            Minimum number of samples required to split an internal node
+        min_samples_leaf : int, default=5
+            Minimum number of samples required to be at a leaf node
+        """
+        self.max_depth = max_depth
+        self.min_samples_split = min_samples_split
+        self.min_samples_leaf = min_samples_leaf
+        self.tree_ = None
+        self.n_features_ = None
+        self.n_leaves_ = 0
+    
+    def _mse(self, y):
+        """Calculate Mean Squared Error for a set of samples"""
+        if len(y) == 0:
+            return 0
+        return np.mean((y - np.mean(y)) ** 2)
+    
+    def _best_split(self, X, y):
+        """
+        Find the best split for a node
+        
+        Returns:
+        --------
+        best_feature : int or None
+            Index of the best feature to split on
+        best_threshold : float or None
+            Value of the best threshold
+        best_mse_reduction : float
+            MSE reduction achieved by the best split
+        """
+        n_samples, n_features = X.shape
+        
+        if n_samples < self.min_samples_split:
+            return None, None, 0
+        
+        # Current MSE
+        current_mse = self._mse(y)
+        best_mse_reduction = 0
+        best_feature = None
+        best_threshold = None
+        
+        # Try each feature
+        for feature_idx in range(n_features):
+            # Get unique values and sort
+            feature_values = X[:, feature_idx]
+            thresholds = np.unique(feature_values)
+            
+            # Try each threshold
+            for threshold in thresholds:
+                # Split samples
+                left_mask = feature_values <= threshold
+                right_mask = ~left_mask
+                
+                # Check minimum samples constraint
+                n_left = np.sum(left_mask)
+                n_right = np.sum(right_mask)
+                
+                if n_left < self.min_samples_leaf or n_right < self.min_samples_leaf:
+                    continue
+                
+                # Calculate weighted MSE after split
+                y_left = y[left_mask]
+                y_right = y[right_mask]
+                
+                mse_left = self._mse(y_left)
+                mse_right = self._mse(y_right)
+                
+                weighted_mse = (n_left * mse_left + n_right * mse_right) / n_samples
+                mse_reduction = current_mse - weighted_mse
+                
+                # Update best split
+                if mse_reduction > best_mse_reduction:
+                    best_mse_reduction = mse_reduction
+                    best_feature = feature_idx
+                    best_threshold = threshold
+        
+        return best_feature, best_threshold, best_mse_reduction
+    
+    def _build_tree(self, X, y, depth=0):
+        """
+        Recursively build the decision tree
+        
+        Returns:
+        --------
+        node : dict
+            Tree node containing either split information or leaf value
+        """
+        n_samples = len(y)
+        
+        # Stopping criteria
+        if (depth >= self.max_depth or 
+            n_samples < self.min_samples_split or 
+            n_samples < 2 * self.min_samples_leaf or
+            len(np.unique(y)) == 1):
+            # Create leaf node
+            self.n_leaves_ += 1
+            return {
+                'type': 'leaf',
+                'value': np.mean(y),
+                'n_samples': n_samples
+            }
+        
+        # Find best split
+        best_feature, best_threshold, mse_reduction = self._best_split(X, y)
+        
+        # If no valid split found, create leaf
+        if best_feature is None or mse_reduction <= 0:
+            self.n_leaves_ += 1
+            return {
+                'type': 'leaf',
+                'value': np.mean(y),
+                'n_samples': n_samples
+            }
+        
+        # Split data
+        left_mask = X[:, best_feature] <= best_threshold
+        right_mask = ~left_mask
+        
+        X_left, y_left = X[left_mask], y[left_mask]
+        X_right, y_right = X[right_mask], y[right_mask]
+        
+        # Recursively build left and right subtrees
+        left_child = self._build_tree(X_left, y_left, depth + 1)
+        right_child = self._build_tree(X_right, y_right, depth + 1)
+        
+        # Create internal node
+        return {
+            'type': 'internal',
+            'feature': best_feature,
+            'threshold': best_threshold,
+            'left': left_child,
+            'right': right_child,
+            'n_samples': n_samples,
+            'mse_reduction': mse_reduction
+        }
+    
+    def fit(self, X, y):
+        """
+        Build decision tree from training data
+        
+        Parameters:
+        -----------
+        X : array-like, shape (n_samples, n_features)
+            Training data
+        y : array-like, shape (n_samples,)
+            Target values
+        
+        Returns:
+        --------
+        self : object
+        """
+        self.n_features_ = X.shape[1]
+        self.n_leaves_ = 0
+        self.tree_ = self._build_tree(X, y)
+        return self
+    
+    def _predict_sample(self, x, node):
+        """
+        Predict value for a single sample
+        
+        Parameters:
+        -----------
+        x : array-like, shape (n_features,)
+            Single sample
+        node : dict
+            Current tree node
+        
+        Returns:
+        --------
+        value : float
+            Predicted value
+        """
+        if node['type'] == 'leaf':
+            return node['value']
+        
+        # Navigate tree
+        if x[node['feature']] <= node['threshold']:
+            return self._predict_sample(x, node['left'])
+        else:
+            return self._predict_sample(x, node['right'])
+    
+    def predict(self, X):
+        """
+        Predict values for samples
+        
+        Parameters:
+        -----------
+        X : array-like, shape (n_samples, n_features)
+            Test samples
+        
+        Returns:
+        --------
+        y_pred : array, shape (n_samples,)
+            Predicted values
+        """
+        return np.array([self._predict_sample(x, self.tree_) for x in X])
+    
+    def get_n_leaves(self):
+        """Return the number of leaves in the tree"""
+        return self.n_leaves_
+    
+    def get_depth(self):
+        """Get the actual depth of the tree"""
+        def _get_depth(node):
+            if node['type'] == 'leaf':
+                return 0
+            return 1 + max(_get_depth(node['left']), _get_depth(node['right']))
+        
+        return _get_depth(self.tree_)
+
 
 # CROSS-VALIDATION
 class KFold:
