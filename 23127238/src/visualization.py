@@ -61,7 +61,6 @@ def plot_missing_values(data, column_names, target_columns, title='Missing Value
 
 def plot_distribution(data, column_name, bins=50, title=None):
     data_clean = data[~np.isnan(data)]
-    
     fig, axes = plt.subplots(1, 2, figsize=(16, 5))
     
     sns.histplot(
@@ -275,7 +274,6 @@ def plot_room_type_by_neighbourhood(neighbourhood_groups, room_types, prices):
         ax.set_ylabel('Count' if idx == 0 else '')
         ax.tick_params(axis='x', rotation=45)
         
-        # Add count on top of bars
         for p in ax.patches:
             height = p.get_height()
             if not np.isnan(height):
@@ -398,7 +396,7 @@ def plot_top_words_name(data, column_names, top_n=10):
     col_idx = np.where(column_names == 'name')[0][0]
     names_data = data[:, col_idx]
 
-    # 2. Define Stopwords (Complete combination)
+    # Define Stopwords (Complete combination)
     stopwords = {
         'a', 'an', 'the', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
         'of', 'with', 'by', 'from', 'as', 'is', 'was', 'are', 'were', 'be',
@@ -425,8 +423,7 @@ def plot_top_words_name(data, column_names, top_n=10):
                 name_clean += char
             else:
                 name_clean += " "
-        
-        # Split words
+
         words = name_clean.split()
         
         for w in words:
@@ -444,8 +441,7 @@ def plot_top_words_name(data, column_names, top_n=10):
     values = [item[1] for item in top_list]
 
     fig, ax = plt.subplots(figsize=(12, 6), constrained_layout=True)
-    
-    # Plot
+
     sns.barplot(x=labels, y=values, hue=labels, palette='viridis', legend=False, ax=ax)
     
     ax.set_title(f'Top {top_n} Most Common Words in Listing Names (Thoroughly Filtered)', 
@@ -897,7 +893,6 @@ def plot_correlation_heatmap(corr_matrix, column_names, title='Correlation Matri
     # Create mask for upper triangle
     mask = np.triu(np.ones_like(corr_matrix, dtype=bool), k=1)
     
-    # Create heatmap
     sns.heatmap(corr_matrix, 
                 annot=True, 
                 fmt='.2f',
@@ -918,7 +913,6 @@ def plot_correlation_heatmap(corr_matrix, column_names, title='Correlation Matri
     plt.tight_layout()
     plt.show()
     
-    # Print significant correlations
     print("SIGNIFICANT CORRELATIONS (|r| > 0.3):")
     
     n = len(column_names)
@@ -943,7 +937,6 @@ def plot_descriptive_statistics(data, column_names, numeric_columns):
     print(f"{'COLUMN':<30} | {'SKEWNESS ANALYSIS':<32} | {'KURTOSIS ANALYSIS':<40}")
     print("="*110)
 
-    # Collect data for plotting
     numeric_data_list = []
     numeric_col_names = []
 
@@ -951,8 +944,7 @@ def plot_descriptive_statistics(data, column_names, numeric_columns):
         if col in column_names:
             col_idx = np.where(column_names == col)[0][0]
             col_data = data[:, col_idx]
-            
-            # Convert to numeric, remove empty values
+
             numeric_vals = []
             for val in col_data:
                 if val != '':
@@ -965,7 +957,6 @@ def plot_descriptive_statistics(data, column_names, numeric_columns):
                 numeric_data = np.array(numeric_vals, dtype=np.float64)
                 n = len(numeric_data)
                 
-                # Welford's Algorithm - numerical stability for mean & variance
                 mean = np.float64(0.0)
                 M2 = np.float64(0.0)
                 
@@ -984,15 +975,13 @@ def plot_descriptive_statistics(data, column_names, numeric_columns):
                 skewness = m3 / (std**3) if std > 0 else 0
                 kurtosis = (m4 / (std**4) - 3) if std > 0 else 0
                 
-                # Skewness interpretation
                 if abs(skewness) < 0.5:
                     skew_interp = "Approximately symmetric"
                 elif skewness > 0.5:
                     skew_interp = "Right-skewed (positive)"
                 else:
                     skew_interp = "Left-skewed (negative)"
-                    
-                # Kurtosis interpretation
+
                 if kurtosis > 1:
                     kurt_interp = "Heavy-tailed (outliers)"
                 elif kurtosis < -1:
@@ -1001,12 +990,10 @@ def plot_descriptive_statistics(data, column_names, numeric_columns):
                     kurt_interp = "Approx. normal tails"
 
                 print(f"{col:<30} | {skewness:>6.2f} ({skew_interp:<23}) | {kurtosis:>6.2f} ({kurt_interp})")
-                
-                # Store for plotting
+
                 numeric_data_list.append(numeric_data)
                 numeric_col_names.append(col)
 
-    # Histogram plots with KDE
     n_cols_plot = len(numeric_col_names)
     n_rows = (n_cols_plot + 2) // 3
     n_cols_grid = 3
@@ -1019,8 +1006,7 @@ def plot_descriptive_statistics(data, column_names, numeric_columns):
         
         mean_val = np.mean(data_plot)
         median_val = np.median(data_plot)
-        
-        # Calculate skewness for this column
+
         std_val = np.std(data_plot)
         skew_val = np.mean((data_plot - mean_val)**3) / (std_val**3) if std_val > 0 else 0
         

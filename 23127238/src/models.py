@@ -8,20 +8,7 @@ class LinearRegression:
         self.intercept_ = None
     
     def fit(self, X, y):
-        """
-        Fit Linear Regression model using Normal Equation
-        
-        Parameters:
-        -----------
-        X : array-like, shape (n_samples, n_features)
-        y : array-like, shape (n_samples,)
-        
-        Returns:
-        --------
-        self : object
-        """
         if self.fit_intercept:
-            # Add ones column for intercept
             X_with_intercept = np.c_[np.ones(X.shape[0]), X]
         else:
             X_with_intercept = X
@@ -42,17 +29,6 @@ class LinearRegression:
         return self
     
     def predict(self, X):
-        """
-        Predict using the linear model
-        
-        Parameters:
-        -----------
-        X : array-like, shape (n_samples, n_features)
-        
-        Returns:
-        --------
-        y_pred : array, shape (n_samples,)
-        """
         return X @ self.coef_ + self.intercept_
 
 # LASSO 
@@ -67,25 +43,9 @@ class Lasso:
         self.n_iter_ = None
     
     def _soft_threshold(self, rho, alpha):
-        """
-        Vectorized soft-thresholding operator
-        S(rho, alpha) = sign(rho) * max(|rho| - alpha, 0)
-        """
         return np.sign(rho) * np.maximum(np.abs(rho) - alpha, 0)
     
     def fit(self, X, y):
-        """
-        Fit Lasso model using Coordinate Descent
-        
-        Parameters:
-        -----------
-        X : array-like, shape (n_samples, n_features)
-        y : array-like, shape (n_samples,)
-        
-        Returns:
-        --------
-        self : object
-        """
         n_samples, n_features = X.shape
         
         if self.fit_intercept:
@@ -93,7 +53,6 @@ class Lasso:
         else:
             X_with_intercept = X
         
-        # Initialize weights = 0
         weights = np.zeros(X_with_intercept.shape[1])
         
         # Pre-compute X^T @ X diagonal for optimization
@@ -135,35 +94,12 @@ class Lasso:
         return self
     
     def predict(self, X):
-        """
-        Predict using the Lasso model
-        
-        Parameters:
-        -----------
-        X : array-like, shape (n_samples, n_features)
-        
-        Returns:
-        --------
-        y_pred : array, shape (n_samples,)
-        """
         return X @ self.coef_ + self.intercept_
 
 
 # CART (Classification and Regression Tree)
 class CART:
     def __init__(self, max_depth=5, min_samples_split=10, min_samples_leaf=5):
-        """
-        CART (Classification and Regression Tree) for Regression
-        
-        Parameters:
-        -----------
-        max_depth : int, default=5
-            Maximum depth of the tree
-        min_samples_split : int, default=10
-            Minimum number of samples required to split an internal node
-        min_samples_leaf : int, default=5
-            Minimum number of samples required to be at a leaf node
-        """
         self.max_depth = max_depth
         self.min_samples_split = min_samples_split
         self.min_samples_leaf = min_samples_leaf
@@ -172,55 +108,35 @@ class CART:
         self.n_leaves_ = 0
     
     def _mse(self, y):
-        """Calculate Mean Squared Error for a set of samples"""
         if len(y) == 0:
             return 0
         return np.mean((y - np.mean(y)) ** 2)
     
     def _best_split(self, X, y):
-        """
-        Find the best split for a node
-        
-        Returns:
-        --------
-        best_feature : int or None
-            Index of the best feature to split on
-        best_threshold : float or None
-            Value of the best threshold
-        best_mse_reduction : float
-            MSE reduction achieved by the best split
-        """
         n_samples, n_features = X.shape
         
         if n_samples < self.min_samples_split:
             return None, None, 0
         
-        # Current MSE
         current_mse = self._mse(y)
         best_mse_reduction = 0
         best_feature = None
         best_threshold = None
         
-        # Try each feature
         for feature_idx in range(n_features):
-            # Get unique values and sort
             feature_values = X[:, feature_idx]
             thresholds = np.unique(feature_values)
             
-            # Try each threshold
             for threshold in thresholds:
-                # Split samples
                 left_mask = feature_values <= threshold
                 right_mask = ~left_mask
                 
-                # Check minimum samples constraint
                 n_left = np.sum(left_mask)
                 n_right = np.sum(right_mask)
                 
                 if n_left < self.min_samples_leaf or n_right < self.min_samples_leaf:
                     continue
                 
-                # Calculate weighted MSE after split
                 y_left = y[left_mask]
                 y_right = y[right_mask]
                 
@@ -229,8 +145,7 @@ class CART:
                 
                 weighted_mse = (n_left * mse_left + n_right * mse_right) / n_samples
                 mse_reduction = current_mse - weighted_mse
-                
-                # Update best split
+
                 if mse_reduction > best_mse_reduction:
                     best_mse_reduction = mse_reduction
                     best_feature = feature_idx
@@ -239,22 +154,12 @@ class CART:
         return best_feature, best_threshold, best_mse_reduction
     
     def _build_tree(self, X, y, depth=0):
-        """
-        Recursively build the decision tree
-        
-        Returns:
-        --------
-        node : dict
-            Tree node containing either split information or leaf value
-        """
         n_samples = len(y)
         
-        # Stopping criteria
         if (depth >= self.max_depth or 
             n_samples < self.min_samples_split or 
             n_samples < 2 * self.min_samples_leaf or
             len(np.unique(y)) == 1):
-            # Create leaf node
             self.n_leaves_ += 1
             return {
                 'type': 'leaf',
@@ -262,10 +167,8 @@ class CART:
                 'n_samples': n_samples
             }
         
-        # Find best split
         best_feature, best_threshold, mse_reduction = self._best_split(X, y)
         
-        # If no valid split found, create leaf
         if best_feature is None or mse_reduction <= 0:
             self.n_leaves_ += 1
             return {
@@ -274,18 +177,15 @@ class CART:
                 'n_samples': n_samples
             }
         
-        # Split data
         left_mask = X[:, best_feature] <= best_threshold
         right_mask = ~left_mask
         
         X_left, y_left = X[left_mask], y[left_mask]
         X_right, y_right = X[right_mask], y[right_mask]
-        
-        # Recursively build left and right subtrees
+
         left_child = self._build_tree(X_left, y_left, depth + 1)
         right_child = self._build_tree(X_right, y_right, depth + 1)
         
-        # Create internal node
         return {
             'type': 'internal',
             'feature': best_feature,
@@ -297,41 +197,12 @@ class CART:
         }
     
     def fit(self, X, y):
-        """
-        Build decision tree from training data
-        
-        Parameters:
-        -----------
-        X : array-like, shape (n_samples, n_features)
-            Training data
-        y : array-like, shape (n_samples,)
-            Target values
-        
-        Returns:
-        --------
-        self : object
-        """
         self.n_features_ = X.shape[1]
         self.n_leaves_ = 0
         self.tree_ = self._build_tree(X, y)
         return self
     
     def _predict_sample(self, x, node):
-        """
-        Predict value for a single sample
-        
-        Parameters:
-        -----------
-        x : array-like, shape (n_features,)
-            Single sample
-        node : dict
-            Current tree node
-        
-        Returns:
-        --------
-        value : float
-            Predicted value
-        """
         if node['type'] == 'leaf':
             return node['value']
         
@@ -342,27 +213,12 @@ class CART:
             return self._predict_sample(x, node['right'])
     
     def predict(self, X):
-        """
-        Predict values for samples
-        
-        Parameters:
-        -----------
-        X : array-like, shape (n_samples, n_features)
-            Test samples
-        
-        Returns:
-        --------
-        y_pred : array, shape (n_samples,)
-            Predicted values
-        """
         return np.array([self._predict_sample(x, self.tree_) for x in X])
     
     def get_n_leaves(self):
-        """Return the number of leaves in the tree"""
         return self.n_leaves_
     
     def get_depth(self):
-        """Get the actual depth of the tree"""
         def _get_depth(node):
             if node['type'] == 'leaf':
                 return 0
@@ -379,21 +235,6 @@ class KFold:
         self.random_state = random_state
     
     def split(self, X, y=None):
-        """
-        Generate indices to split data into training and test set
-        
-        Parameters:
-        -----------
-        X : array-like, shape (n_samples, n_features)
-        y : array-like, shape (n_samples,), optional
-        
-        Yields:
-        -------
-        train_idx : ndarray
-            The training set indices for that split
-        test_idx : ndarray
-            The testing set indices for that split
-        """
         n_samples = len(X)
         indices = np.arange(n_samples)
         
@@ -416,25 +257,6 @@ class KFold:
 
 # METRICS
 def r2_score(y_true, y_pred):
-    """
-    Calculate R² score (Coefficient of Determination)
-    
-    R² = 1 - (SS_res / SS_tot)
-    SS_res = sum of squared residuals
-    SS_tot = total sum of squares
-    
-    Parameters:
-    -----------
-    y_true : array-like, shape (n_samples,)
-        Ground truth target values
-    y_pred : array-like, shape (n_samples,)
-        Predicted target values
-    
-    Returns:
-    --------
-    score : float
-        R² score, best value is 1.0
-    """
     ss_res = np.sum((y_true - y_pred) ** 2)
     ss_tot = np.sum((y_true - np.mean(y_true)) ** 2)
     
@@ -442,65 +264,14 @@ def r2_score(y_true, y_pred):
 
 
 def rmse_score(y_true, y_pred):
-    """
-    Calculate RMSE (Root Mean Squared Error)
-    
-    RMSE = sqrt(mean((y_true - y_pred)^2))
-    
-    Parameters:
-    -----------
-    y_true : array-like, shape (n_samples,)
-        Ground truth target values
-    y_pred : array-like, shape (n_samples,)
-        Predicted target values
-    
-    Returns:
-    --------
-    score : float
-        RMSE score, best value is 0.0
-    """
     return np.sqrt(np.mean((y_true - y_pred) ** 2))
 
 
 def mae_score(y_true, y_pred):
-    """
-    Calculate MAE (Mean Absolute Error)
-    
-    MAE = mean(|y_true - y_pred|)
-    
-    Parameters:
-    -----------
-    y_true : array-like, shape (n_samples,)
-        Ground truth target values
-    y_pred : array-like, shape (n_samples,)
-        Predicted target values
-    
-    Returns:
-    --------
-    score : float
-        MAE score, best value is 0.0
-    """
     return np.mean(np.abs(y_true - y_pred))
 
 
 def evaluate_model(y_true, y_pred, model_name="Model"):
-    """
-    Evaluate model with multiple metrics
-    
-    Parameters:
-    -----------
-    y_true : array-like, shape (n_samples,)
-        Ground truth target values
-    y_pred : array-like, shape (n_samples,)
-        Predicted target values
-    model_name : str, default="Model"
-        Name of the model for display
-    
-    Returns:
-    --------
-    metrics : dict
-        Dictionary containing R², RMSE, and MAE scores
-    """
     r2 = r2_score(y_true, y_pred)
     rmse = rmse_score(y_true, y_pred)
     mae = mae_score(y_true, y_pred)
@@ -514,23 +285,6 @@ def evaluate_model(y_true, y_pred, model_name="Model"):
 
 
 def cross_validate(estimator, X, y, cv=5):
-    """
-    Evaluate estimator by cross-validation
-    
-    Parameters:
-    -----------
-    estimator : estimator object
-        Object with fit and predict methods
-    X : array-like, features
-    y : array-like, target
-    cv : int or cross-validation generator
-        If int, KFold with cv splits will be used
-    
-    Returns:
-    --------
-    scores : dict
-        Dictionary containing R², RMSE, and MAE scores for each fold
-    """
     if isinstance(cv, int):
         cv = KFold(n_splits=cv, shuffle=True, random_state=42)
     
@@ -543,11 +297,9 @@ def cross_validate(estimator, X, y, cv=5):
           (f" (alpha={estimator.alpha})" if hasattr(estimator, 'alpha') else ""))
     
     for fold_idx, (train_idx, val_idx) in enumerate(cv.split(X, y)):
-        # Split data - vectorized indexing
         X_fold_train, X_fold_val = X[train_idx], X[val_idx]
         y_fold_train, y_fold_val = y[train_idx], y[val_idx]
-        
-        # Clone estimator and fit
+
         if hasattr(estimator, 'alpha'):
             fold_estimator = type(estimator)(alpha=estimator.alpha, 
                                              max_iter=estimator.max_iter, 
@@ -556,11 +308,9 @@ def cross_validate(estimator, X, y, cv=5):
             fold_estimator = type(estimator)()
         
         fold_estimator.fit(X_fold_train, y_fold_train)
-        
-        # Predict on validation set
+
         y_fold_pred = fold_estimator.predict(X_fold_val)
-        
-        # Calculate metrics - vectorized
+
         r2 = r2_score(y_fold_val, y_fold_pred)
         rmse = rmse_score(y_fold_val, y_fold_pred)
         mae = mae_score(y_fold_val, y_fold_pred)
@@ -570,8 +320,7 @@ def cross_validate(estimator, X, y, cv=5):
         mae_scores.append(mae)
         
         print(f"  Fold {fold_idx + 1}: R²={r2:.3f}, RMSE={rmse:.3f}, MAE={mae:.3f}")
-    
-    # Vectorized mean and std calculation
+
     r2_scores = np.array(r2_scores)
     rmse_scores = np.array(rmse_scores)
     mae_scores = np.array(mae_scores)
